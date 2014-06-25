@@ -1,0 +1,619 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html>
+<head>
+<title>fpcORM: fpcormdbobjects: Class TfoDBTableField</title>
+<meta name="generator" content="PasDoc 0.13.0">
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<link rel="StyleSheet" type="text/css" href="pasdoc.css">
+</head>
+<body>
+<table class="container"><tr><td class="navigation">
+<h2>fpcORM</h2><p><a href="AllUnits.html" class="navigation">Units</a></p><p><a href="ClassHierarchy.html" class="navigation">Class Hierarchy</a></p><p><a href="AllClasses.html" class="navigation">Classes, Interfaces, Objects and Records</a></p><p><a href="AllTypes.html" class="navigation">Types</a></p><p><a href="AllVariables.html" class="navigation">Variables</a></p><p><a href="AllConstants.html" class="navigation">Constants</a></p><p><a href="AllFunctions.html" class="navigation">Functions and Procedures</a></p><p><a href="AllIdentifiers.html" class="navigation">Identifiers</a></p></td><td class="content">
+<a name="TfoDBTableField"></a><h1 class="cio">Class TfoDBTableField</h1>
+<table class="sections wide_list">
+<tr>
+<td><a class="section" href="#PasDoc-Description">Description</a></td><td><a class="section" href="#PasDoc-Hierarchy">Hierarchy</a></td><td><a class="section" href="#PasDoc-Fields">Fields</a></td><td><a class="section" href="#PasDoc-Methods">Methods</a></td><td><a class="section" href="#PasDoc-Properties">Properties</a></td></tr></table>
+<a name="PasDoc-Description"></a><h2 class="unit">Unit</h2>
+<p class="unitlink">
+<a  href="fpcormdbobjects.html">fpcormdbobjects</a></p>
+<h2 class="declaration">Declaration</h2>
+<p class="declaration">
+<code>type generic TfoDBTableField&lt;T&gt; = class(TInterfacedPersistent, <a class="normal" href="fpcormdbobjects.IfoDBTableField.html">IfoDBTableField</a>)</code></p>
+<h2 class="description">Description</h2>
+<p>
+TfoTableField</p>
+<a name="PasDoc-Hierarchy"></a><h2 class="hierarchy">Hierarchy</h2>
+<ul class="hierarchy"><li class="ancestor">TInterfacedPersistent</li>
+<li class="thisitem">TfoDBTableField</li></ul><h2 class="overview">Overview</h2>
+<a name="PasDoc-Fields"></a><h3 class="summary">Fields</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code><b><a  href="fpcormdbobjects.TfoDBTableField.html#fOwnerTable">fOwnerTable</a></b>: <a  href="fpcormdbobjects.TfoDBTable.html">TfoDBTable</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code><b><a  href="fpcormdbobjects.TfoDBTableField.html#fValue">fValue</a></b>: T;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code><b><a  href="fpcormdbobjects.TfoDBTableField.html#fFieldName">fFieldName</a></b>: String;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code><b><a  href="fpcormdbobjects.TfoDBTableField.html#fIsNull">fIsNull</a></b>: Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code><b><a  href="fpcormdbobjects.TfoDBTableField.html#fIsAssigned">fIsAssigned</a></b>: Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code><b><a  href="fpcormdbobjects.TfoDBTableField.html#fIsChanged">fIsChanged</a></b>: Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code><b><a  href="fpcormdbobjects.TfoDBTableField.html#fIsIndexed">fIsIndexed</a></b>: Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code><b><a  href="fpcormdbobjects.TfoDBTableField.html#fIsPrimaryKey">fIsPrimaryKey</a></b>: Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code><b><a  href="fpcormdbobjects.TfoDBTableField.html#fIsForeignKey">fIsForeignKey</a></b>: Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code><b><a  href="fpcormdbobjects.TfoDBTableField.html#fHasDefault">fHasDefault</a></b>: Boolean;</code></td>
+</tr>
+</table>
+<a name="PasDoc-Methods"></a><h3 class="summary">Methods</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code>function <b><a  href="fpcormdbobjects.TfoDBTableField.html#GetValue">GetValue</a></b>: T;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code>procedure <b><a  href="fpcormdbobjects.TfoDBTableField.html#SetValue">SetValue</a></b>(aValue: T);</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code>function <b><a  href="fpcormdbobjects.TfoDBTableField.html#GetFieldName">GetFieldName</a></b>: String;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code>procedure <b><a  href="fpcormdbobjects.TfoDBTableField.html#SetFieldName">SetFieldName</a></b>(aFieldName: String);</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code>function <b><a  href="fpcormdbobjects.TfoDBTableField.html#GetIsNull">GetIsNull</a></b>: Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code>procedure <b><a  href="fpcormdbobjects.TfoDBTableField.html#SetIsNull">SetIsNull</a></b>(aIsNull: Boolean);</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code>function <b><a  href="fpcormdbobjects.TfoDBTableField.html#GetIsAssigned">GetIsAssigned</a></b>: Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code>procedure <b><a  href="fpcormdbobjects.TfoDBTableField.html#SetIsAssigned">SetIsAssigned</a></b>(aIsAssigned: Boolean);</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code>function <b><a  href="fpcormdbobjects.TfoDBTableField.html#GetIsChanged">GetIsChanged</a></b>: Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code>procedure <b><a  href="fpcormdbobjects.TfoDBTableField.html#SetIsChanged">SetIsChanged</a></b>(aIsChanged: Boolean);</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code>function <b><a  href="fpcormdbobjects.TfoDBTableField.html#GetIsIndexed">GetIsIndexed</a></b>: Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code>procedure <b><a  href="fpcormdbobjects.TfoDBTableField.html#SetIsIndexed">SetIsIndexed</a></b>(aIsIndexed: Boolean);</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code>function <b><a  href="fpcormdbobjects.TfoDBTableField.html#GetIsForeignKey">GetIsForeignKey</a></b>: Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code>procedure <b><a  href="fpcormdbobjects.TfoDBTableField.html#SetIsForeignKey">SetIsForeignKey</a></b>(aIsForeignKey: Boolean);</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code>function <b><a  href="fpcormdbobjects.TfoDBTableField.html#GetIsPrimaryKey">GetIsPrimaryKey</a></b>: Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code>procedure <b><a  href="fpcormdbobjects.TfoDBTableField.html#SetIsPrimaryKey">SetIsPrimaryKey</a></b>(aIsPrimaryKey: Boolean);</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code>function <b><a  href="fpcormdbobjects.TfoDBTableField.html#GetHasDefault">GetHasDefault</a></b>: Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code>procedure <b><a  href="fpcormdbobjects.TfoDBTableField.html#SetHasDefault">SetHasDefault</a></b>(aHasDefault: Boolean);</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code>function <b><a  href="fpcormdbobjects.TfoDBTableField.html#GetOwnerTable">GetOwnerTable</a></b>: <a  href="fpcormdbobjects.TfoDBTable.html">TfoDBTable</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code>procedure <b><a  href="fpcormdbobjects.TfoDBTableField.html#SetOwnerTable">SetOwnerTable</a></b>(aOwnerTable: <a  href="fpcormdbobjects.TfoDBTable.html">TfoDBTable</a>);</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>constructor <b><a  href="fpcormdbobjects.TfoDBTableField.html#Create">Create</a></b>(aOwnerTable: <a  href="fpcormdbobjects.TfoDBTable.html">TfoDBTable</a>); overload;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>constructor <b><a  href="fpcormdbobjects.TfoDBTableField.html#Create">Create</a></b>(aOwnerTable: <a  href="fpcormdbobjects.TfoDBTable.html">TfoDBTable</a>; aValue: T; aFieldName: String = ''); overload;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>destructor <b><a  href="fpcormdbobjects.TfoDBTableField.html#Destroy">Destroy</a></b>; override;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>procedure <b><a  href="fpcormdbobjects.TfoDBTableField.html#ClearValue">ClearValue</a></b>; virtual;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>function <b><a  href="fpcormdbobjects.TfoDBTableField.html#ToSql">ToSql</a></b>(): String; virtual;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>function <b><a  href="fpcormdbobjects.TfoDBTableField.html#ToXML">ToXML</a></b>(): String; virtual;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>function <b><a  href="fpcormdbobjects.TfoDBTableField.html#AsString">AsString</a></b>(): String; virtual;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>function <b><a  href="fpcormdbobjects.TfoDBTableField.html#ValueEquals">ValueEquals</a></b>(aValue: T): Boolean;</code></td>
+</tr>
+</table>
+<a name="PasDoc-Properties"></a><h3 class="summary">Properties</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="fpcormdbobjects.TfoDBTableField.html#Value">Value</a></b>: T read <a  href="fpcormdbobjects.TfoDBTableField.html#GetValue">GetValue</a> write <a  href="fpcormdbobjects.TfoDBTableField.html#SetValue">SetValue</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="fpcormdbobjects.TfoDBTableField.html#IsNull">IsNull</a></b>: Boolean read <a  href="fpcormdbobjects.TfoDBTableField.html#GetIsNull">GetIsNull</a> write <a  href="fpcormdbobjects.TfoDBTableField.html#SetIsNull">SetIsNull</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="fpcormdbobjects.TfoDBTableField.html#IsAssigned">IsAssigned</a></b>: Boolean read <a  href="fpcormdbobjects.TfoDBTableField.html#GetIsAssigned">GetIsAssigned</a> write <a  href="fpcormdbobjects.TfoDBTableField.html#SetIsAssigned">SetIsAssigned</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="fpcormdbobjects.TfoDBTableField.html#IsPrimaryKey">IsPrimaryKey</a></b>: Boolean read <a  href="fpcormdbobjects.TfoDBTableField.html#GetIsPrimaryKey">GetIsPrimaryKey</a> write <a  href="fpcormdbobjects.TfoDBTableField.html#SetIsPrimaryKey">SetIsPrimaryKey</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="fpcormdbobjects.TfoDBTableField.html#IsIndexed">IsIndexed</a></b>: Boolean read <a  href="fpcormdbobjects.TfoDBTableField.html#GetIsIndexed">GetIsIndexed</a> write <a  href="fpcormdbobjects.TfoDBTableField.html#SetIsIndexed">SetIsIndexed</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="fpcormdbobjects.TfoDBTableField.html#IsForeignKey">IsForeignKey</a></b>: Boolean read <a  href="fpcormdbobjects.TfoDBTableField.html#GetIsForeignKey">GetIsForeignKey</a> write <a  href="fpcormdbobjects.TfoDBTableField.html#SetIsForeignKey">SetIsForeignKey</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="fpcormdbobjects.TfoDBTableField.html#HasDefault">HasDefault</a></b>: Boolean read <a  href="fpcormdbobjects.TfoDBTableField.html#GetHasDefault">GetHasDefault</a> write <a  href="fpcormdbobjects.TfoDBTableField.html#SetHasDefault">SetHasDefault</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="fpcormdbobjects.TfoDBTableField.html#IsChanged">IsChanged</a></b>: Boolean read <a  href="fpcormdbobjects.TfoDBTableField.html#GetIsChanged">GetIsChanged</a> write <a  href="fpcormdbobjects.TfoDBTableField.html#SetIsChanged">SetIsChanged</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="fpcormdbobjects.TfoDBTableField.html#FieldName">FieldName</a></b>: String read <a  href="fpcormdbobjects.TfoDBTableField.html#GetFieldName">GetFieldName</a> write <a  href="fpcormdbobjects.TfoDBTableField.html#SetFieldName">SetFieldName</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="fpcormdbobjects.TfoDBTableField.html#OwnerTable">OwnerTable</a></b>: <a  href="fpcormdbobjects.TfoDBTable.html">TfoDBTable</a> read <a  href="fpcormdbobjects.TfoDBTableField.html#GetOwnerTable">GetOwnerTable</a> write <a  href="fpcormdbobjects.TfoDBTableField.html#SetOwnerTable">SetOwnerTable</a>;</code></td>
+</tr>
+</table>
+<h2 class="description">Description</h2>
+<h3 class="detail">Fields</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="fOwnerTable"></a><code><b>fOwnerTable</b>: <a  href="fpcormdbobjects.TfoDBTable.html">TfoDBTable</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="fValue"></a><code><b>fValue</b>: T;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="fFieldName"></a><code><b>fFieldName</b>: String;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="fIsNull"></a><code><b>fIsNull</b>: Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="fIsAssigned"></a><code><b>fIsAssigned</b>: Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="fIsChanged"></a><code><b>fIsChanged</b>: Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="fIsIndexed"></a><code><b>fIsIndexed</b>: Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="fIsPrimaryKey"></a><code><b>fIsPrimaryKey</b>: Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="fIsForeignKey"></a><code><b>fIsForeignKey</b>: Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="fHasDefault"></a><code><b>fHasDefault</b>: Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<h3 class="detail">Methods</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="GetValue"></a><code>function <b>GetValue</b>: T;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="SetValue"></a><code>procedure <b>SetValue</b>(aValue: T);</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="GetFieldName"></a><code>function <b>GetFieldName</b>: String;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="SetFieldName"></a><code>procedure <b>SetFieldName</b>(aFieldName: String);</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="GetIsNull"></a><code>function <b>GetIsNull</b>: Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="SetIsNull"></a><code>procedure <b>SetIsNull</b>(aIsNull: Boolean);</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="GetIsAssigned"></a><code>function <b>GetIsAssigned</b>: Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="SetIsAssigned"></a><code>procedure <b>SetIsAssigned</b>(aIsAssigned: Boolean);</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="GetIsChanged"></a><code>function <b>GetIsChanged</b>: Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="SetIsChanged"></a><code>procedure <b>SetIsChanged</b>(aIsChanged: Boolean);</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="GetIsIndexed"></a><code>function <b>GetIsIndexed</b>: Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="SetIsIndexed"></a><code>procedure <b>SetIsIndexed</b>(aIsIndexed: Boolean);</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="GetIsForeignKey"></a><code>function <b>GetIsForeignKey</b>: Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="SetIsForeignKey"></a><code>procedure <b>SetIsForeignKey</b>(aIsForeignKey: Boolean);</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="GetIsPrimaryKey"></a><code>function <b>GetIsPrimaryKey</b>: Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="SetIsPrimaryKey"></a><code>procedure <b>SetIsPrimaryKey</b>(aIsPrimaryKey: Boolean);</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="GetHasDefault"></a><code>function <b>GetHasDefault</b>: Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="SetHasDefault"></a><code>procedure <b>SetHasDefault</b>(aHasDefault: Boolean);</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="GetOwnerTable"></a><code>function <b>GetOwnerTable</b>: <a  href="fpcormdbobjects.TfoDBTable.html">TfoDBTable</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="SetOwnerTable"></a><code>procedure <b>SetOwnerTable</b>(aOwnerTable: <a  href="fpcormdbobjects.TfoDBTable.html">TfoDBTable</a>);</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Create"></a><code>constructor <b>Create</b>(aOwnerTable: <a  href="fpcormdbobjects.TfoDBTable.html">TfoDBTable</a>); overload;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Create"></a><code>constructor <b>Create</b>(aOwnerTable: <a  href="fpcormdbobjects.TfoDBTable.html">TfoDBTable</a>; aValue: T; aFieldName: String = ''); overload;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Destroy"></a><code>destructor <b>Destroy</b>; override;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="ClearValue"></a><code>procedure <b>ClearValue</b>; virtual;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="ToSql"></a><code>function <b>ToSql</b>(): String; virtual;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="ToXML"></a><code>function <b>ToXML</b>(): String; virtual;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="AsString"></a><code>function <b>AsString</b>(): String; virtual;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="ValueEquals"></a><code>function <b>ValueEquals</b>(aValue: T): Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<h3 class="detail">Properties</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Value"></a><code>property <b>Value</b>: T read <a  href="fpcormdbobjects.TfoDBTableField.html#GetValue">GetValue</a> write <a  href="fpcormdbobjects.TfoDBTableField.html#SetValue">SetValue</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="IsNull"></a><code>property <b>IsNull</b>: Boolean read <a  href="fpcormdbobjects.TfoDBTableField.html#GetIsNull">GetIsNull</a> write <a  href="fpcormdbobjects.TfoDBTableField.html#SetIsNull">SetIsNull</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="IsAssigned"></a><code>property <b>IsAssigned</b>: Boolean read <a  href="fpcormdbobjects.TfoDBTableField.html#GetIsAssigned">GetIsAssigned</a> write <a  href="fpcormdbobjects.TfoDBTableField.html#SetIsAssigned">SetIsAssigned</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="IsPrimaryKey"></a><code>property <b>IsPrimaryKey</b>: Boolean read <a  href="fpcormdbobjects.TfoDBTableField.html#GetIsPrimaryKey">GetIsPrimaryKey</a> write <a  href="fpcormdbobjects.TfoDBTableField.html#SetIsPrimaryKey">SetIsPrimaryKey</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="IsIndexed"></a><code>property <b>IsIndexed</b>: Boolean read <a  href="fpcormdbobjects.TfoDBTableField.html#GetIsIndexed">GetIsIndexed</a> write <a  href="fpcormdbobjects.TfoDBTableField.html#SetIsIndexed">SetIsIndexed</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="IsForeignKey"></a><code>property <b>IsForeignKey</b>: Boolean read <a  href="fpcormdbobjects.TfoDBTableField.html#GetIsForeignKey">GetIsForeignKey</a> write <a  href="fpcormdbobjects.TfoDBTableField.html#SetIsForeignKey">SetIsForeignKey</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="HasDefault"></a><code>property <b>HasDefault</b>: Boolean read <a  href="fpcormdbobjects.TfoDBTableField.html#GetHasDefault">GetHasDefault</a> write <a  href="fpcormdbobjects.TfoDBTableField.html#SetHasDefault">SetHasDefault</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="IsChanged"></a><code>property <b>IsChanged</b>: Boolean read <a  href="fpcormdbobjects.TfoDBTableField.html#GetIsChanged">GetIsChanged</a> write <a  href="fpcormdbobjects.TfoDBTableField.html#SetIsChanged">SetIsChanged</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="FieldName"></a><code>property <b>FieldName</b>: String read <a  href="fpcormdbobjects.TfoDBTableField.html#GetFieldName">GetFieldName</a> write <a  href="fpcormdbobjects.TfoDBTableField.html#SetFieldName">SetFieldName</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="OwnerTable"></a><code>property <b>OwnerTable</b>: <a  href="fpcormdbobjects.TfoDBTable.html">TfoDBTable</a> read <a  href="fpcormdbobjects.TfoDBTableField.html#GetOwnerTable">GetOwnerTable</a> write <a  href="fpcormdbobjects.TfoDBTableField.html#SetOwnerTable">SetOwnerTable</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<hr noshade size="1"><span class="appinfo"><em>Generated by <a  href="http://pasdoc.sourceforge.net/">PasDoc 0.13.0</a> on 2014-06-25 17:30:02</em>
+</span>
+</td></tr></table></body></html>

@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<CONFIG>
+  <Compiler Value="F:\Andreas\lazarus\fpc\2.6.2\bin\x86_64-win64\fpc.exe" Date="1120493294"/>
+  <Params Value=" -MObjFPC -Scghi -CR -g -gl -gh -vewnhi -FiF:\Documents\GitHub\fpcORM\src\poc\lib\x86_64-win64 -FlF:\Documents\GitHub\fpcORM\src\poc\usr\local\lib -FlF:\Documents\GitHub\fpcORM\src\poc\usr\lib -FuF:\Documents\GitHub\fpcORM\src\poc\common -FuF:\Documents\GitHub\fpcORM\src\poc\codebuilder -FuF:\Documents\GitHub\fpcORM\src\poc\ui -FuF:\Documents\GitHub\fpcORM\src\poc\test -FuF:\Documents\GitHub\fpcORM\src\poc\ -FUF:\Documents\GitHub\fpcORM\src\poc\lib\x86_64-win64\ -l -gl shortstringtests.lpr"/>
+</CONFIG>

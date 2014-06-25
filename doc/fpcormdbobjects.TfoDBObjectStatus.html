@@ -1,0 +1,499 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html>
+<head>
+<title>fpcORM: fpcormdbobjects: Class TfoDBObjectStatus</title>
+<meta name="generator" content="PasDoc 0.13.0">
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<link rel="StyleSheet" type="text/css" href="pasdoc.css">
+</head>
+<body>
+<table class="container"><tr><td class="navigation">
+<h2>fpcORM</h2><p><a href="AllUnits.html" class="navigation">Units</a></p><p><a href="ClassHierarchy.html" class="navigation">Class Hierarchy</a></p><p><a href="AllClasses.html" class="navigation">Classes, Interfaces, Objects and Records</a></p><p><a href="AllTypes.html" class="navigation">Types</a></p><p><a href="AllVariables.html" class="navigation">Variables</a></p><p><a href="AllConstants.html" class="navigation">Constants</a></p><p><a href="AllFunctions.html" class="navigation">Functions and Procedures</a></p><p><a href="AllIdentifiers.html" class="navigation">Identifiers</a></p></td><td class="content">
+<a name="TfoDBObjectStatus"></a><h1 class="cio">Class TfoDBObjectStatus</h1>
+<table class="sections wide_list">
+<tr>
+<td><a class="section" href="#PasDoc-Description">Description</a></td><td><a class="section" href="#PasDoc-Hierarchy">Hierarchy</a></td><td><a class="section" href="#PasDoc-Fields">Fields</a></td><td><a class="section" href="#PasDoc-Methods">Methods</a></td><td><a class="section" href="#PasDoc-Properties">Properties</a></td></tr></table>
+<a name="PasDoc-Description"></a><h2 class="unit">Unit</h2>
+<p class="unitlink">
+<a  href="fpcormdbobjects.html">fpcormdbobjects</a></p>
+<h2 class="declaration">Declaration</h2>
+<p class="declaration">
+<code>type TfoDBObjectStatus = class(TInterfacedPersistent)</code></p>
+<h2 class="description">Description</h2>
+<p>
+<code>TfoDBObjectStatus</code></p>
+<a name="PasDoc-Hierarchy"></a><h2 class="hierarchy">Hierarchy</h2>
+<ul class="hierarchy"><li class="ancestor">TInterfacedPersistent</li>
+<li class="thisitem">TfoDBObjectStatus</li></ul><h2 class="overview">Overview</h2>
+<a name="PasDoc-Fields"></a><h3 class="summary">Fields</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code><b><a  href="fpcormdbobjects.TfoDBObjectStatus.html#fIsNew">fIsNew</a></b>: Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code><b><a  href="fpcormdbobjects.TfoDBObjectStatus.html#fIsLoaded">fIsLoaded</a></b>: Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code><b><a  href="fpcormdbobjects.TfoDBObjectStatus.html#fIsChanged">fIsChanged</a></b>: Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code><b><a  href="fpcormdbobjects.TfoDBObjectStatus.html#fIsDeleted">fIsDeleted</a></b>: Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code><b><a  href="fpcormdbobjects.TfoDBObjectStatus.html#fCreatedTime">fCreatedTime</a></b>: TDateTime;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code><b><a  href="fpcormdbobjects.TfoDBObjectStatus.html#fLoadedTime">fLoadedTime</a></b>: TDateTime;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code><b><a  href="fpcormdbobjects.TfoDBObjectStatus.html#fChangedTime">fChangedTime</a></b>: TDateTime;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code><b><a  href="fpcormdbobjects.TfoDBObjectStatus.html#fSavedTime">fSavedTime</a></b>: TDateTime;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code><b><a  href="fpcormdbobjects.TfoDBObjectStatus.html#fDeletedTime">fDeletedTime</a></b>: TDateTime;</code></td>
+</tr>
+</table>
+<a name="PasDoc-Methods"></a><h3 class="summary">Methods</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code>function <b><a  href="fpcormdbobjects.TfoDBObjectStatus.html#GetIsNew">GetIsNew</a></b>(): Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code>procedure <b><a  href="fpcormdbobjects.TfoDBObjectStatus.html#SetIsNew">SetIsNew</a></b>(aIsNew: Boolean);</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code>function <b><a  href="fpcormdbobjects.TfoDBObjectStatus.html#GetIsLoaded">GetIsLoaded</a></b>(): Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code>procedure <b><a  href="fpcormdbobjects.TfoDBObjectStatus.html#SetIsLoaded">SetIsLoaded</a></b>(aIsLoaded: Boolean);</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code>function <b><a  href="fpcormdbobjects.TfoDBObjectStatus.html#GetIsChanged">GetIsChanged</a></b>(): Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code>procedure <b><a  href="fpcormdbobjects.TfoDBObjectStatus.html#SetIsChanged">SetIsChanged</a></b>(aIsChanged: Boolean);</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code>function <b><a  href="fpcormdbobjects.TfoDBObjectStatus.html#GetIsDeleted">GetIsDeleted</a></b>(): Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code>procedure <b><a  href="fpcormdbobjects.TfoDBObjectStatus.html#SetIsDeleted">SetIsDeleted</a></b>(aIsDeleted: Boolean);</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code>function <b><a  href="fpcormdbobjects.TfoDBObjectStatus.html#GetCreatedTime">GetCreatedTime</a></b>(): TDateTime;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code>procedure <b><a  href="fpcormdbobjects.TfoDBObjectStatus.html#SetCreatedTime">SetCreatedTime</a></b>(aCreatedTime: TDateTime);</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code>function <b><a  href="fpcormdbobjects.TfoDBObjectStatus.html#GetLoadedTime">GetLoadedTime</a></b>(): TDateTime;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code>procedure <b><a  href="fpcormdbobjects.TfoDBObjectStatus.html#SetLoadedTime">SetLoadedTime</a></b>(aLoadedTime: TDateTime);</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code>function <b><a  href="fpcormdbobjects.TfoDBObjectStatus.html#GetChangedTime">GetChangedTime</a></b>(): TDateTime;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code>procedure <b><a  href="fpcormdbobjects.TfoDBObjectStatus.html#SetChangedTime">SetChangedTime</a></b>(aChangedTime: TDateTime);</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code>function <b><a  href="fpcormdbobjects.TfoDBObjectStatus.html#GetSavedTime">GetSavedTime</a></b>(): TDateTime;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code>procedure <b><a  href="fpcormdbobjects.TfoDBObjectStatus.html#SetSavedTime">SetSavedTime</a></b>(aSavedTime: TDateTime);</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code>function <b><a  href="fpcormdbobjects.TfoDBObjectStatus.html#GetDeletedTime">GetDeletedTime</a></b>(): TDateTime;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code>procedure <b><a  href="fpcormdbobjects.TfoDBObjectStatus.html#SetDeletedTime">SetDeletedTime</a></b>(aDeletedTime: TDateTime);</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>constructor <b><a  href="fpcormdbobjects.TfoDBObjectStatus.html#Create">Create</a></b>;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>destructor <b><a  href="fpcormdbobjects.TfoDBObjectStatus.html#Destroy">Destroy</a></b>; override;</code></td>
+</tr>
+</table>
+<a name="PasDoc-Properties"></a><h3 class="summary">Properties</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="fpcormdbobjects.TfoDBObjectStatus.html#IsNew">IsNew</a></b>: Boolean read <a  href="fpcormdbobjects.TfoDBObjectStatus.html#GetIsNew">GetIsNew</a> write <a  href="fpcormdbobjects.TfoDBObjectStatus.html#SetIsNew">SetIsNew</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="fpcormdbobjects.TfoDBObjectStatus.html#IsLoaded">IsLoaded</a></b>: Boolean read <a  href="fpcormdbobjects.TfoDBObjectStatus.html#GetIsLoaded">GetIsLoaded</a> write <a  href="fpcormdbobjects.TfoDBObjectStatus.html#SetIsLoaded">SetIsLoaded</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="fpcormdbobjects.TfoDBObjectStatus.html#IsChanged">IsChanged</a></b>: Boolean read <a  href="fpcormdbobjects.TfoDBObjectStatus.html#GetIsChanged">GetIsChanged</a> write <a  href="fpcormdbobjects.TfoDBObjectStatus.html#SetIsChanged">SetIsChanged</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="fpcormdbobjects.TfoDBObjectStatus.html#IsDeleted">IsDeleted</a></b>: Boolean read <a  href="fpcormdbobjects.TfoDBObjectStatus.html#GetIsDeleted">GetIsDeleted</a> write <a  href="fpcormdbobjects.TfoDBObjectStatus.html#SetIsDeleted">SetIsDeleted</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="fpcormdbobjects.TfoDBObjectStatus.html#CreatedTime">CreatedTime</a></b>: TDateTime read <a  href="fpcormdbobjects.TfoDBObjectStatus.html#GetCreatedTime">GetCreatedTime</a> write <a  href="fpcormdbobjects.TfoDBObjectStatus.html#SetCreatedTime">SetCreatedTime</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="fpcormdbobjects.TfoDBObjectStatus.html#LoadedTime">LoadedTime</a></b>: TDateTime read <a  href="fpcormdbobjects.TfoDBObjectStatus.html#GetLoadedTime">GetLoadedTime</a> write <a  href="fpcormdbobjects.TfoDBObjectStatus.html#SetLoadedTime">SetLoadedTime</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="fpcormdbobjects.TfoDBObjectStatus.html#ChangedTime">ChangedTime</a></b>: TDateTime read <a  href="fpcormdbobjects.TfoDBObjectStatus.html#GetChangedTime">GetChangedTime</a> write <a  href="fpcormdbobjects.TfoDBObjectStatus.html#SetChangedTime">SetChangedTime</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="fpcormdbobjects.TfoDBObjectStatus.html#SavedTime">SavedTime</a></b>: TDateTime read <a  href="fpcormdbobjects.TfoDBObjectStatus.html#GetSavedTime">GetSavedTime</a> write <a  href="fpcormdbobjects.TfoDBObjectStatus.html#SetSavedTime">SetSavedTime</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="fpcormdbobjects.TfoDBObjectStatus.html#DeletedTime">DeletedTime</a></b>: TDateTime read <a  href="fpcormdbobjects.TfoDBObjectStatus.html#GetDeletedTime">GetDeletedTime</a> write <a  href="fpcormdbobjects.TfoDBObjectStatus.html#SetDeletedTime">SetDeletedTime</a>;</code></td>
+</tr>
+</table>
+<h2 class="description">Description</h2>
+<h3 class="detail">Fields</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="fIsNew"></a><code><b>fIsNew</b>: Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="fIsLoaded"></a><code><b>fIsLoaded</b>: Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="fIsChanged"></a><code><b>fIsChanged</b>: Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="fIsDeleted"></a><code><b>fIsDeleted</b>: Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="fCreatedTime"></a><code><b>fCreatedTime</b>: TDateTime;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="fLoadedTime"></a><code><b>fLoadedTime</b>: TDateTime;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="fChangedTime"></a><code><b>fChangedTime</b>: TDateTime;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="fSavedTime"></a><code><b>fSavedTime</b>: TDateTime;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="fDeletedTime"></a><code><b>fDeletedTime</b>: TDateTime;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<h3 class="detail">Methods</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="GetIsNew"></a><code>function <b>GetIsNew</b>(): Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="SetIsNew"></a><code>procedure <b>SetIsNew</b>(aIsNew: Boolean);</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="GetIsLoaded"></a><code>function <b>GetIsLoaded</b>(): Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="SetIsLoaded"></a><code>procedure <b>SetIsLoaded</b>(aIsLoaded: Boolean);</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="GetIsChanged"></a><code>function <b>GetIsChanged</b>(): Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="SetIsChanged"></a><code>procedure <b>SetIsChanged</b>(aIsChanged: Boolean);</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="GetIsDeleted"></a><code>function <b>GetIsDeleted</b>(): Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="SetIsDeleted"></a><code>procedure <b>SetIsDeleted</b>(aIsDeleted: Boolean);</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="GetCreatedTime"></a><code>function <b>GetCreatedTime</b>(): TDateTime;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="SetCreatedTime"></a><code>procedure <b>SetCreatedTime</b>(aCreatedTime: TDateTime);</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="GetLoadedTime"></a><code>function <b>GetLoadedTime</b>(): TDateTime;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="SetLoadedTime"></a><code>procedure <b>SetLoadedTime</b>(aLoadedTime: TDateTime);</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="GetChangedTime"></a><code>function <b>GetChangedTime</b>(): TDateTime;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="SetChangedTime"></a><code>procedure <b>SetChangedTime</b>(aChangedTime: TDateTime);</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="GetSavedTime"></a><code>function <b>GetSavedTime</b>(): TDateTime;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="SetSavedTime"></a><code>procedure <b>SetSavedTime</b>(aSavedTime: TDateTime);</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="GetDeletedTime"></a><code>function <b>GetDeletedTime</b>(): TDateTime;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="SetDeletedTime"></a><code>procedure <b>SetDeletedTime</b>(aDeletedTime: TDateTime);</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Create"></a><code>constructor <b>Create</b>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Destroy"></a><code>destructor <b>Destroy</b>; override;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<h3 class="detail">Properties</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="IsNew"></a><code>property <b>IsNew</b>: Boolean read <a  href="fpcormdbobjects.TfoDBObjectStatus.html#GetIsNew">GetIsNew</a> write <a  href="fpcormdbobjects.TfoDBObjectStatus.html#SetIsNew">SetIsNew</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="IsLoaded"></a><code>property <b>IsLoaded</b>: Boolean read <a  href="fpcormdbobjects.TfoDBObjectStatus.html#GetIsLoaded">GetIsLoaded</a> write <a  href="fpcormdbobjects.TfoDBObjectStatus.html#SetIsLoaded">SetIsLoaded</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="IsChanged"></a><code>property <b>IsChanged</b>: Boolean read <a  href="fpcormdbobjects.TfoDBObjectStatus.html#GetIsChanged">GetIsChanged</a> write <a  href="fpcormdbobjects.TfoDBObjectStatus.html#SetIsChanged">SetIsChanged</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="IsDeleted"></a><code>property <b>IsDeleted</b>: Boolean read <a  href="fpcormdbobjects.TfoDBObjectStatus.html#GetIsDeleted">GetIsDeleted</a> write <a  href="fpcormdbobjects.TfoDBObjectStatus.html#SetIsDeleted">SetIsDeleted</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="CreatedTime"></a><code>property <b>CreatedTime</b>: TDateTime read <a  href="fpcormdbobjects.TfoDBObjectStatus.html#GetCreatedTime">GetCreatedTime</a> write <a  href="fpcormdbobjects.TfoDBObjectStatus.html#SetCreatedTime">SetCreatedTime</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="LoadedTime"></a><code>property <b>LoadedTime</b>: TDateTime read <a  href="fpcormdbobjects.TfoDBObjectStatus.html#GetLoadedTime">GetLoadedTime</a> write <a  href="fpcormdbobjects.TfoDBObjectStatus.html#SetLoadedTime">SetLoadedTime</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="ChangedTime"></a><code>property <b>ChangedTime</b>: TDateTime read <a  href="fpcormdbobjects.TfoDBObjectStatus.html#GetChangedTime">GetChangedTime</a> write <a  href="fpcormdbobjects.TfoDBObjectStatus.html#SetChangedTime">SetChangedTime</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="SavedTime"></a><code>property <b>SavedTime</b>: TDateTime read <a  href="fpcormdbobjects.TfoDBObjectStatus.html#GetSavedTime">GetSavedTime</a> write <a  href="fpcormdbobjects.TfoDBObjectStatus.html#SetSavedTime">SetSavedTime</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="DeletedTime"></a><code>property <b>DeletedTime</b>: TDateTime read <a  href="fpcormdbobjects.TfoDBObjectStatus.html#GetDeletedTime">GetDeletedTime</a> write <a  href="fpcormdbobjects.TfoDBObjectStatus.html#SetDeletedTime">SetDeletedTime</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<hr noshade size="1"><span class="appinfo"><em>Generated by <a  href="http://pasdoc.sourceforge.net/">PasDoc 0.13.0</a> on 2014-06-25 17:30:02</em>
+</span>
+</td></tr></table></body></html>

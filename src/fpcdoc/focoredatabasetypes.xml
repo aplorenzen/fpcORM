@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<fpdoc-descriptions><package name="fpcorm"><module name="foCoreDatabaseTypes"><element name="IfoSQLObject"><short>Simple interface representing any object that can receive and pass a SQL connector.</short>
+      </element><element name="IfoTableObject"><short>An interface representing an object that contains information about a database table.</short>
+      </element>
+    <element name="IfoDBObject"><short>Interface for a type, able to store a connection to a database.</short><descr>This interface should enable implementing objects, to share a connection with each other.
+
+<p><remark>Could be used across the object groups in fpcORM, since also the metadata objects may need to store a connection.</remark>
+          </p><p><remark>Should this interface offer to connect to the database aswell? Why should it?</remark>
+          </p>
+        </descr>
+      </element>
+    </module>
+  </package>
+</fpdoc-descriptions>

@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="9"/>
+    <BuildModes Active="Default"/>
+    <Units Count="1">
+      <Unit0>
+        <Filename Value="shortstringtests.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="shortstringtests"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="0"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="4"/>
+        <CursorPos X="29" Y="9"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit0>
+    </Units>
+    <General>
+      <ActiveWindowIndexAtStart Value="0"/>
+    </General>
+    <JumpHistory Count="11" HistoryIndex="10">
+      <Position1>
+        <Filename Value="shortstringtests.lpr"/>
+        <Caret Line="40" Column="8" TopLine="34"/>
+      </Position1>
+      <Position2>
+        <Filename Value="shortstringtests.lpr"/>
+        <Caret Line="48" Column="23" TopLine="34"/>
+      </Position2>
+      <Position3>
+        <Filename Value="shortstringtests.lpr"/>
+        <Caret Line="28" Column="3" TopLine="28"/>
+      </Position3>
+      <Position4>
+        <Filename Value="shortstringtests.lpr"/>
+        <Caret Line="34" Column="1" TopLine="28"/>
+      </Position4>
+      <Position5>
+        <Filename Value="shortstringtests.lpr"/>
+        <Caret Line="35" Column="1" TopLine="28"/>
+      </Position5>
+      <Position6>
+        <Filename Value="shortstringtests.lpr"/>
+        <Caret Line="42" Column="1" TopLine="28"/>
+      </Position6>
+      <Position7>
+        <Filename Value="shortstringtests.lpr"/>
+        <Caret Line="49" Column="23" TopLine="30"/>
+      </Position7>
+      <Position8>
+        <Filename Value="shortstringtests.lpr"/>
+        <Caret Line="34" Column="1" TopLine="28"/>
+      </Position8>
+      <Position9>
+        <Filename Value="shortstringtests.lpr"/>
+        <Caret Line="35" Column="1" TopLine="28"/>
+      </Position9>
+      <Position10>
+        <Filename Value="shortstringtests.lpr"/>
+        <Caret Line="42" Column="1" TopLine="28"/>
+      </Position10>
+      <Position11>
+        <Filename Value="shortstringtests.lpr"/>
+        <Caret Line="49" Column="1" TopLine="28"/>
+      </Position11>
+    </JumpHistory>
+  </ProjectSession>
+  <Debugging>
+    <BreakPoints Count="1">
+      <Item1>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="shortstringtests.lpr"/>
+        <Line Value="33"/>
+      </Item1>
+    </BreakPoints>
+  </Debugging>
+</CONFIG>
