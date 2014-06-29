@@ -1,0 +1,326 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html>
+<head>
+<title>fpcORM: fpcorm_dbcore_objects: Class TfoDBTableObject</title>
+<meta name="generator" content="PasDoc 0.13.0">
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<link rel="StyleSheet" type="text/css" href="pasdoc.css">
+</head>
+<body>
+<table class="container"><tr><td class="navigation">
+<h2>fpcORM</h2><p><a href="AllUnits.html" class="navigation">Units</a></p><p><a href="ClassHierarchy.html" class="navigation">Class Hierarchy</a></p><p><a href="AllClasses.html" class="navigation">Classes, Interfaces, Objects and Records</a></p><p><a href="AllTypes.html" class="navigation">Types</a></p><p><a href="AllVariables.html" class="navigation">Variables</a></p><p><a href="AllConstants.html" class="navigation">Constants</a></p><p><a href="AllFunctions.html" class="navigation">Functions and Procedures</a></p><p><a href="AllIdentifiers.html" class="navigation">Identifiers</a></p></td><td class="content">
+<a name="TfoDBTableObject"></a><h1 class="cio">Class TfoDBTableObject</h1>
+<table class="sections wide_list">
+<tr>
+<td><a class="section" href="#PasDoc-Description">Description</a></td><td><a class="section" href="#PasDoc-Hierarchy">Hierarchy</a></td><td><a class="section" href="#PasDoc-Fields">Fields</a></td><td><a class="section" href="#PasDoc-Methods">Methods</a></td><td><a class="section" href="#PasDoc-Properties">Properties</a></td></tr></table>
+<a name="PasDoc-Description"></a><h2 class="unit">Unit</h2>
+<p class="unitlink">
+<a  href="fpcorm_dbcore_objects.html">fpcorm_dbcore_objects</a></p>
+<h2 class="declaration">Declaration</h2>
+<p class="declaration">
+<code>type TfoDBTableObject = class(<a class="normal" href="fpcorm_common_types.TfoObserver.html">TfoObserver</a>)</code></p>
+<h2 class="description">Description</h2>
+<p>
+The <code>TfoDBTableObject</code> object, represents a database table... more info here</p>
+<a name="PasDoc-Hierarchy"></a><h2 class="hierarchy">Hierarchy</h2>
+<ul class="hierarchy"><li class="ancestor">TInterfacedPersistent</li>
+<li class="ancestor"><a class="normal" href="fpcorm_common_types.TfoObserverSubject.html">TfoObserverSubject</a></li>
+<li class="ancestor"><a class="normal" href="fpcorm_common_types.TfoObserver.html">TfoObserver</a></li>
+<li class="thisitem">TfoDBTableObject</li></ul><h2 class="overview">Overview</h2>
+<a name="PasDoc-Fields"></a><h3 class="summary">Fields</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code><b><a  href="fpcorm_dbcore_objects.TfoDBTableObject.html#fConnection">fConnection</a></b>: TSQLConnector;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code><b><a  href="fpcorm_dbcore_objects.TfoDBTableObject.html#fMutex">fMutex</a></b>: TCriticalSection;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code><b><a  href="fpcorm_dbcore_objects.TfoDBTableObject.html#fTableInformation">fTableInformation</a></b>: <a  href="fpcorm_dbcore_objects.TfoDBTableInformation.html">TfoDBTableInformation</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code><b><a  href="fpcorm_dbcore_objects.TfoDBTableObject.html#fObjectStatus">fObjectStatus</a></b>: <a  href="fpcorm_dbcore_objects.TfoDBTableStatus.html">TfoDBTableStatus</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code><b><a  href="fpcorm_dbcore_objects.TfoDBTableObject.html#fFieldList">fFieldList</a></b>: <a  href="fpcorm_dbcore_objects.html#TfoDBTableFieldList">TfoDBTableFieldList</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code><b><a  href="fpcorm_dbcore_objects.TfoDBTableObject.html#fIsDestroying">fIsDestroying</a></b>: Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><code><b><a  href="fpcorm_dbcore_objects.TfoDBTableObject.html#fOpenedConnection">fOpenedConnection</a></b>: Boolean;</code></td>
+</tr>
+</table>
+<a name="PasDoc-Methods"></a><h3 class="summary">Methods</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="protected.gif" alt="Protected" title="Protected"></a></td>
+<td class="itemcode"><code>function <b><a  href="fpcorm_dbcore_objects.TfoDBTableObject.html#OpenConnection">OpenConnection</a></b>: Boolean;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="protected.gif" alt="Protected" title="Protected"></a></td>
+<td class="itemcode"><code>function <b><a  href="fpcorm_dbcore_objects.TfoDBTableObject.html#CloseConnection">CloseConnection</a></b>(aConsumeException: Boolean = False): Boolean;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>constructor <b><a  href="fpcorm_dbcore_objects.TfoDBTableObject.html#Create">Create</a></b>(aConnection: TSQLConnector; aMutex: TCriticalSection);</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>destructor <b><a  href="fpcorm_dbcore_objects.TfoDBTableObject.html#Destroy">Destroy</a></b>; override;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>procedure <b><a  href="fpcorm_dbcore_objects.TfoDBTableObject.html#AddTableField">AddTableField</a></b>(aTableField: <a  href="fpcorm_dbcore_objects.TfoDBAbstractTableField.html">TfoDBAbstractTableField</a>);</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>function <b><a  href="fpcorm_dbcore_objects.TfoDBTableObject.html#Load_OpenSQL">Load_OpenSQL</a></b>(aSQL: String): Boolean; virtual; abstract;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>procedure <b><a  href="fpcorm_dbcore_objects.TfoDBTableObject.html#ReceiveSubjectUpdate">ReceiveSubjectUpdate</a></b>(aSubject: <a  href="fpcorm_common_interfaces.IfoObserverSubject.html">IfoObserverSubject</a>); override;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>function <b><a  href="fpcorm_dbcore_objects.TfoDBTableObject.html#Insert">Insert</a></b>: Boolean;</code></td>
+</tr>
+</table>
+<a name="PasDoc-Properties"></a><h3 class="summary">Properties</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="fpcorm_dbcore_objects.TfoDBTableObject.html#Connection">Connection</a></b>: TSQLConnector read <a  href="fpcorm_dbcore_objects.TfoDBTableObject.html#fConnection">fConnection</a> write <a  href="fpcorm_dbcore_objects.TfoDBTableObject.html#fConnection">fConnection</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="fpcorm_dbcore_objects.TfoDBTableObject.html#TableInformation">TableInformation</a></b>: <a  href="fpcorm_dbcore_objects.TfoDBTableInformation.html">TfoDBTableInformation</a> read <a  href="fpcorm_dbcore_objects.TfoDBTableObject.html#fTableInformation">fTableInformation</a> write <a  href="fpcorm_dbcore_objects.TfoDBTableObject.html#fTableInformation">fTableInformation</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="fpcorm_dbcore_objects.TfoDBTableObject.html#Mutex">Mutex</a></b>: TCriticalSection read <a  href="fpcorm_dbcore_objects.TfoDBTableObject.html#fMutex">fMutex</a> write <a  href="fpcorm_dbcore_objects.TfoDBTableObject.html#fMutex">fMutex</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="fpcorm_dbcore_objects.TfoDBTableObject.html#ObjectStatus">ObjectStatus</a></b>: <a  href="fpcorm_dbcore_objects.TfoDBTableStatus.html">TfoDBTableStatus</a> read <a  href="fpcorm_dbcore_objects.TfoDBTableObject.html#fObjectStatus">fObjectStatus</a> write <a  href="fpcorm_dbcore_objects.TfoDBTableObject.html#fObjectStatus">fObjectStatus</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="fpcorm_dbcore_objects.TfoDBTableObject.html#FieldList">FieldList</a></b>: <a  href="fpcorm_dbcore_objects.html#TfoDBTableFieldList">TfoDBTableFieldList</a> read <a  href="fpcorm_dbcore_objects.TfoDBTableObject.html#fFieldList">fFieldList</a> write <a  href="fpcorm_dbcore_objects.TfoDBTableObject.html#fFieldList">fFieldList</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="fpcorm_dbcore_objects.TfoDBTableObject.html#IsDestroying">IsDestroying</a></b>: Boolean read <a  href="fpcorm_dbcore_objects.TfoDBTableObject.html#fIsDestroying">fIsDestroying</a> write <a  href="fpcorm_dbcore_objects.TfoDBTableObject.html#fIsDestroying">fIsDestroying</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <b><a  href="fpcorm_dbcore_objects.TfoDBTableObject.html#OpenedConnection">OpenedConnection</a></b>: Boolean read <a  href="fpcorm_dbcore_objects.TfoDBTableObject.html#fOpenedConnection">fOpenedConnection</a>;</code></td>
+</tr>
+</table>
+<h2 class="description">Description</h2>
+<h3 class="detail">Fields</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="fConnection"></a><code><b>fConnection</b>: TSQLConnector;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="fMutex"></a><code><b>fMutex</b>: TCriticalSection;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="fTableInformation"></a><code><b>fTableInformation</b>: <a  href="fpcorm_dbcore_objects.TfoDBTableInformation.html">TfoDBTableInformation</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="fObjectStatus"></a><code><b>fObjectStatus</b>: <a  href="fpcorm_dbcore_objects.TfoDBTableStatus.html">TfoDBTableStatus</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="fFieldList"></a><code><b>fFieldList</b>: <a  href="fpcorm_dbcore_objects.html#TfoDBTableFieldList">TfoDBTableFieldList</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="fIsDestroying"></a><code><b>fIsDestroying</b>: Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="private.gif" alt="Private" title="Private"></a></td>
+<td class="itemcode"><a name="fOpenedConnection"></a><code><b>fOpenedConnection</b>: Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<h3 class="detail">Methods</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="protected.gif" alt="Protected" title="Protected"></a></td>
+<td class="itemcode"><a name="OpenConnection"></a><code>function <b>OpenConnection</b>: Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+The <code>OpenConnection</code> function provides the trivial means of opening the database <a class="normal" href="fpcorm_dbcore_objects.TfoDBTableObject.html#Connection">connection</a> to the decendant types. </p>
+<h6 class="description_section">Returns</h6>
+<p class="return">True if the <a class="normal" href="fpcorm_dbcore_objects.TfoDBTableObject.html#Connection">connection</a> was opened successfully, False if <a class="normal" href="fpcorm_dbcore_objects.TfoDBTableObject.html#Connection">connection</a> could not be established.</p></td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="protected.gif" alt="Protected" title="Protected"></a></td>
+<td class="itemcode"><a name="CloseConnection"></a><code>function <b>CloseConnection</b>(aConsumeException: Boolean = False): Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+The <code>CloseConnection</code> function closes the local <a class="normal" href="fpcorm_dbcore_objects.TfoDBTableObject.html#Connection">connection</a>. Only if it is actually open and if the decending object also was the initiator of the <a class="normal" href="fpcorm_dbcore_objects.TfoDBTableObject.html#Connection">connection</a>. Making this distinction allows decendants to use the <code>CloseConnection</code> function anywhere in decendant types, where they may want to close the database <a class="normal" href="fpcorm_dbcore_objects.TfoDBTableObject.html#Connection">connection</a>, and only close it if that decendant object instance was the object that opened it. . </p>
+<h6 class="description_section">Parameters</h6>
+<dl class="parameters">
+<dt>aConsumeException</dt>
+<dd>indicates to the function, if any exception caused should be silenced, or re-raised to the caller.</dd>
+</dl>
+<h6 class="description_section">Returns</h6>
+<p class="return">False if unsuccessful and True if closed successfully</p></td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Create"></a><code>constructor <b>Create</b>(aConnection: TSQLConnector; aMutex: TCriticalSection);</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Destroy"></a><code>destructor <b>Destroy</b>; override;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="AddTableField"></a><code>procedure <b>AddTableField</b>(aTableField: <a  href="fpcorm_dbcore_objects.TfoDBAbstractTableField.html">TfoDBAbstractTableField</a>);</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+<code>AddTableField</code> is intended to be called from the constructors of the fields that are owned by the decending object from this class. Upon creation, a new field (decending from <a class="normal" href="fpcorm_dbcore_objects.TfoDBAbstractTableField.html">TfoDBAbstractTableField</a>) is passed it's owning table as a constructor parameter. The field should in turn then call it's owner's <code>AddTableField</code> procedure, to add itself to it's table's field collection. So that the table object has a complete list of all the fields that are contained in it.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Load_OpenSQL"></a><code>function <b>Load_OpenSQL</b>(aSQL: String): Boolean; virtual; abstract;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="ReceiveSubjectUpdate"></a><code>procedure <b>ReceiveSubjectUpdate</b>(aSubject: <a  href="fpcorm_common_interfaces.IfoObserverSubject.html">IfoObserverSubject</a>); override;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Insert"></a><code>function <b>Insert</b>: Boolean;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+function LoadBy_PK_REC_ID(AREC_ID: Integer; AOwnerInfo: TTableItem = nil): Boolean; function InsertAsNew(): Boolean;</p>
+</td></tr>
+</table>
+<h3 class="detail">Properties</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Connection"></a><code>property <b>Connection</b>: TSQLConnector read <a  href="fpcorm_dbcore_objects.TfoDBTableObject.html#fConnection">fConnection</a> write <a  href="fpcorm_dbcore_objects.TfoDBTableObject.html#fConnection">fConnection</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+the LoadedOrNotNew function may not be nessecary, it was used to 'probe' if an instance was loaded, when using lazyloading function LoadedOrNotNew(AFreeIfNot: Boolean = True): Boolean;</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="TableInformation"></a><code>property <b>TableInformation</b>: <a  href="fpcorm_dbcore_objects.TfoDBTableInformation.html">TfoDBTableInformation</a> read <a  href="fpcorm_dbcore_objects.TfoDBTableObject.html#fTableInformation">fTableInformation</a> write <a  href="fpcorm_dbcore_objects.TfoDBTableObject.html#fTableInformation">fTableInformation</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="Mutex"></a><code>property <b>Mutex</b>: TCriticalSection read <a  href="fpcorm_dbcore_objects.TfoDBTableObject.html#fMutex">fMutex</a> write <a  href="fpcorm_dbcore_objects.TfoDBTableObject.html#fMutex">fMutex</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="ObjectStatus"></a><code>property <b>ObjectStatus</b>: <a  href="fpcorm_dbcore_objects.TfoDBTableStatus.html">TfoDBTableStatus</a> read <a  href="fpcorm_dbcore_objects.TfoDBTableObject.html#fObjectStatus">fObjectStatus</a> write <a  href="fpcorm_dbcore_objects.TfoDBTableObject.html#fObjectStatus">fObjectStatus</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="FieldList"></a><code>property <b>FieldList</b>: <a  href="fpcorm_dbcore_objects.html#TfoDBTableFieldList">TfoDBTableFieldList</a> read <a  href="fpcorm_dbcore_objects.TfoDBTableObject.html#fFieldList">fFieldList</a> write <a  href="fpcorm_dbcore_objects.TfoDBTableObject.html#fFieldList">fFieldList</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="IsDestroying"></a><code>property <b>IsDestroying</b>: Boolean read <a  href="fpcorm_dbcore_objects.TfoDBTableObject.html#fIsDestroying">fIsDestroying</a> write <a  href="fpcorm_dbcore_objects.TfoDBTableObject.html#fIsDestroying">fIsDestroying</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a  href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><a name="OpenedConnection"></a><code>property <b>OpenedConnection</b>: Boolean read <a  href="fpcorm_dbcore_objects.TfoDBTableObject.html#fOpenedConnection">fOpenedConnection</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<hr noshade size="1"><span class="appinfo"><em>Generated by <a  href="http://pasdoc.sourceforge.net/">PasDoc 0.13.0</a> on 2014-06-29 11:32:09</em>
+</span>
+</td></tr></table></body></html>

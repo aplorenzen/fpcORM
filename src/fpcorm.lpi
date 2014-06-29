@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<CONFIG>
+  <ProjectOptions>
+    <Version Value="9"/>
+    <General>
+      <Flags>
+        <MainUnitHasCreateFormStatements Value="False"/>
+      </Flags>
+      <SessionStorage Value="InProjectDir"/>
+      <MainUnit Value="0"/>
+      <Title Value="fpcorm"/>
+      <UseAppBundle Value="False"/>
+      <ResourceType Value="res"/>
+    </General>
+    <LazDoc Paths="../fpcdoc"/>
+    <i18n>
+      <EnableI18N LFM="False"/>
+    </i18n>
+    <VersionInfo>
+      <UseVersionInfo Value="True"/>
+      <AutoIncrementBuild Value="True"/>
+      <MinorVersionNr Value="1"/>
+      <RevisionNr Value="1"/>
+      <BuildNr Value="23"/>
+      <StringTable ProductVersion=""/>
+    </VersionInfo>
+    <BuildModes Count="1">
+      <Item1 Name="Default" Default="True"/>
+    </BuildModes>
+    <PublishOptions>
+      <Version Value="2"/>
+      <IncludeFileFilter Value="*.(pas|pp|inc|lfm|lpr|lrs|lpi|lpk|sh|xml)"/>
+      <ExcludeFileFilter Value="*.(bak|ppu|o|so);*~;backup"/>
+    </PublishOptions>
+    <RunParams>
+      <local>
+        <FormatVersion Value="1"/>
+      </local>
+    </RunParams>
+    <Units Count="8">
+      <Unit0>
+        <Filename Value="fpcorm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="fpcorm"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="fpcorm/dbcore/fpcorm_dbcore_objects.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="fpcorm_dbcore_objects"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="fpcorm/dbcore/fpcorm_dbcore_utils.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="fpcorm_dbcore_utils"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="fpcorm/dbcore/fpcorm_dbcore_constants.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="fpcorm_dbcore_constants"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="fpcorm/dbcore/fpcorm_dbcore_interfaces.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="fpcorm_dbcore_interfaces"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="fpcorm/common/fpcorm_common_interfaces.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="fpcorm_common_interfaces"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="fpcorm/common/fpcorm_common_types.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="fpcorm_common_types"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="fpcorm/common/fpcorm_common_constants.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="fpcorm_common_constants"/>
+      </Unit7>
+    </Units>
+  </ProjectOptions>
+  <CompilerOptions>
+    <Version Value="11"/>
+    <Target>
+      <Filename Value="fpcorm"/>
+    </Target>
+    <SearchPaths>
+      <IncludeFiles Value="$(ProjOutDir)"/>
+      <Libraries Value="console/usr/local/lib;console/usr/lib"/>
+      <OtherUnitFiles Value="console/common;console/codebuilder;console/ui;console/test;dbobjects;fpcorm/common;fpcorm/dbcore"/>
+      <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
+    </SearchPaths>
+    <CodeGeneration>
+      <Optimizations>
+        <OptimizationLevel Value="0"/>
+      </Optimizations>
+    </CodeGeneration>
+    <Linking>
+      <Debugging>
+        <UseHeaptrc Value="True"/>
+      </Debugging>
+    </Linking>
+    <Other>
+      <CompilerMessages>
+        <MsgFileName Value=""/>
+      </CompilerMessages>
+      <CustomOptions Value="-gl"/>
+      <CompilerPath Value="$(CompPath)"/>
+    </Other>
+  </CompilerOptions>
+  <Debugging>
+    <Exceptions Count="3">
+      <Item1>
+        <Name Value="EAbort"/>
+      </Item1>
+      <Item2>
+        <Name Value="ECodetoolError"/>
+      </Item2>
+      <Item3>
+        <Name Value="EFOpenError"/>
+      </Item3>
+    </Exceptions>
+  </Debugging>
+</CONFIG>

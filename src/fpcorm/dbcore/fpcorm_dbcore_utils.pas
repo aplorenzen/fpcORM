@@ -1,4 +1,4 @@
-unit fpcormdbutils;
+unit fpcorm_dbcore_utils;
 
 {< This unit contains helper/utility functions, for the fpcORM database object super classes. }
 

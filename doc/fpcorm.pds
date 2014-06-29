@@ -9,7 +9,7 @@ ClassMembers_0=1
 ClassMembers_1=1
 ClassMembers_2=1
 ClassMembers_3=0
-ClassMembers_4=0
+ClassMembers_4=1
 ClassMembers_5=0
 ClassMembers_6=1
 ClassMembers_7=0
@@ -54,10 +54,13 @@ Count=0
 Count=0
 
 [IncludeDirectories]
-Count=0
+Count=1
+Item_0=..\src\dbobjects
 
 [Files]
-Count=0
+Count=2
+Item_0=..\src\dbobjects\fpcormdbobjects.pas
+Item_1=..\src\dbobjects\fpcormdbutils.pas
 
 [HyphenatedWords]
 Count=0

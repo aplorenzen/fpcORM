@@ -1,4 +1,4 @@
-unit fpcormdbconstants;
+unit fpcorm_dbcore_constants;
 
 {$mode objfpc}{$H+}
 

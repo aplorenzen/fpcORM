@@ -6,8 +6,9 @@ uses
   {$IFDEF UNIX}{$IFDEF UseCThreads}
   cthreads,
   {$ENDIF}{$ENDIF}
-  Classes, SysUtils, CustApp, fpcormdbobjects, fpcormdbutils, fpcormdbconstants
-  { you can add units after this };
+  Classes, SysUtils, CustApp,
+  { you can add units after this }
+  fpcorm_dbcore_objects, fpcorm_dbcore_utils, fpcorm_dbcore_constants;
 
 type
 

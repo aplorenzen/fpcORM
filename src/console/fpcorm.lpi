@@ -40,19 +40,19 @@
         <UnitName Value="fpcorm"/>
       </Unit0>
       <Unit1>
-        <Filename Value="../dbobjects/fpcormdbobjects.pas"/>
+        <Filename Value="../dbobjects/fpcorm_dbcore_objects.pas"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="fpcormdbobjects"/>
+        <UnitName Value="fpcorm_dbcore_objects"/>
       </Unit1>
       <Unit2>
-        <Filename Value="../dbobjects/fpcormdbutils.pas"/>
+        <Filename Value="../dbobjects/fpcorm_dbcore_utils.pas"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="fpcormdbutils"/>
+        <UnitName Value="fpcorm_dbcore_utils"/>
       </Unit2>
       <Unit3>
-        <Filename Value="../dbobjects/fpcormdbconstants.pas"/>
+        <Filename Value="../dbobjects/fpcorm_dbcore_constants.pas"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="fpcormdbconstants"/>
+        <UnitName Value="fpcorm_dbcore_constants"/>
       </Unit3>
     </Units>
   </ProjectOptions>
