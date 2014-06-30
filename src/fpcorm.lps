@@ -9,10 +9,11 @@
         <Filename Value="fpcorm.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="fpcorm"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="9"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="62"/>
-        <CursorPos X="56" Y="75"/>
+        <TopLine Value="99"/>
+        <CursorPos X="5" Y="109"/>
         <UsageCount Value="416"/>
         <Loaded Value="True"/>
       </Unit0>
@@ -20,14 +21,13 @@
         <Filename Value="fpcorm\dbcore\fpcorm_dbcore_objects.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="fpcorm_dbcore_objects"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="266"/>
-        <CursorPos X="56" Y="284"/>
+        <TopLine Value="240"/>
+        <CursorPos X="54" Y="252"/>
         <UsageCount Value="416"/>
         <Bookmarks Count="1">
-          <Item0 X="1" Y="333" ID="1"/>
+          <Item0 X="1" Y="338" ID="1"/>
         </Bookmarks>
         <Loaded Value="True"/>
       </Unit1>
@@ -50,7 +50,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="4" Y="11"/>
-        <UsageCount Value="198"/>
+        <UsageCount Value="240"/>
         <Loaded Value="True"/>
       </Unit3>
       <Unit4>
@@ -61,7 +61,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="1" Y="10"/>
-        <UsageCount Value="142"/>
+        <UsageCount Value="184"/>
         <Loaded Value="True"/>
       </Unit4>
       <Unit5>
@@ -72,7 +72,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="19"/>
         <CursorPos X="35" Y="34"/>
-        <UsageCount Value="142"/>
+        <UsageCount Value="184"/>
         <Loaded Value="True"/>
       </Unit5>
       <Unit6>
@@ -83,7 +83,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="34"/>
         <CursorPos X="64" Y="48"/>
-        <UsageCount Value="142"/>
+        <UsageCount Value="184"/>
         <Loaded Value="True"/>
       </Unit6>
       <Unit7>
@@ -92,14 +92,14 @@
         <WindowIndex Value="0"/>
         <TopLine Value="80"/>
         <CursorPos X="50" Y="96"/>
-        <UsageCount Value="190"/>
+        <UsageCount Value="186"/>
       </Unit7>
       <Unit8>
         <Filename Value="F:\Andreas\lazarus\fpc\2.6.2\source\rtl\inc\objpash.inc"/>
         <WindowIndex Value="0"/>
         <TopLine Value="175"/>
         <CursorPos X="23" Y="192"/>
-        <UsageCount Value="17"/>
+        <UsageCount Value="13"/>
       </Unit8>
       <Unit9>
         <Filename Value="F:\Andreas\lazarus\fpc\2.6.2\source\rtl\objpas\classes\classesh.inc"/>
@@ -107,7 +107,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="194"/>
         <CursorPos X="34" Y="228"/>
-        <UsageCount Value="71"/>
+        <UsageCount Value="92"/>
         <Loaded Value="True"/>
       </Unit9>
       <Unit10>
@@ -116,7 +116,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="15"/>
         <CursorPos X="8" Y="28"/>
-        <UsageCount Value="49"/>
+        <UsageCount Value="45"/>
       </Unit10>
       <Unit11>
         <Filename Value="F:\Andreas\lazarus\fpc\2.6.2\source\rtl\objpas\fgl.pp"/>
@@ -124,7 +124,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="112"/>
         <CursorPos X="17" Y="127"/>
-        <UsageCount Value="17"/>
+        <UsageCount Value="13"/>
       </Unit11>
       <Unit12>
         <Filename Value="F:\Andreas\lazarus\fpc\2.6.2\source\rtl\inc\objpas.inc"/>
@@ -132,7 +132,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="265"/>
         <CursorPos X="9" Y="267"/>
-        <UsageCount Value="71"/>
+        <UsageCount Value="92"/>
         <Loaded Value="True"/>
       </Unit12>
       <Unit13>
@@ -143,7 +143,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="27"/>
         <CursorPos X="13" Y="38"/>
-        <UsageCount Value="109"/>
+        <UsageCount Value="152"/>
         <Bookmarks Count="1">
           <Item0 X="1" Y="36" ID="4"/>
         </Bookmarks>
@@ -155,7 +155,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="21"/>
         <CursorPos X="3" Y="38"/>
-        <UsageCount Value="55"/>
+        <UsageCount Value="76"/>
         <Loaded Value="True"/>
       </Unit14>
       <Unit15>
@@ -163,7 +163,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="91"/>
         <CursorPos X="18" Y="91"/>
-        <UsageCount Value="36"/>
+        <UsageCount Value="32"/>
       </Unit15>
       <Unit16>
         <Filename Value="F:\Andreas\lazarus\fpc\2.6.2\source\packages\fcl-base\src\custapp.pp"/>
@@ -172,7 +172,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="56"/>
         <CursorPos X="14" Y="68"/>
-        <UsageCount Value="33"/>
+        <UsageCount Value="54"/>
         <Loaded Value="True"/>
       </Unit16>
     </Units>
@@ -182,123 +182,123 @@
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="fpcorm\dbcore\fpcorm_dbcore_objects.pas"/>
-        <Caret Line="272" Column="30" TopLine="266"/>
+        <Caret Line="266" Column="8" TopLine="255"/>
       </Position1>
       <Position2>
         <Filename Value="fpcorm\dbcore\fpcorm_dbcore_objects.pas"/>
-        <Caret Line="73" Column="3" TopLine="76"/>
+        <Caret Line="1877" Column="6" TopLine="1867"/>
       </Position2>
       <Position3>
         <Filename Value="fpcorm\dbcore\fpcorm_dbcore_objects.pas"/>
-        <Caret Line="815" Column="29" TopLine="795"/>
+        <Caret Line="294" Column="5" TopLine="282"/>
       </Position3>
       <Position4>
-        <Filename Value="fpcorm\dbcore\fpcorm_dbcore_objects.pas"/>
-        <Caret Line="288" Column="14" TopLine="275"/>
+        <Filename Value="fpcorm.pas"/>
+        <Caret Line="78" Column="38" TopLine="59"/>
       </Position4>
       <Position5>
-        <Filename Value="fpcorm\common\fpcorm_common_types.pas"/>
-        <Caret Line="51" Column="20" TopLine="35"/>
+        <Filename Value="fpcorm.pas"/>
+        <Caret Line="29" Column="17" TopLine="15"/>
       </Position5>
       <Position6>
-        <Filename Value="fpcorm\common\fpcorm_common_types.pas"/>
-        <Caret Line="49" Column="40" TopLine="29"/>
+        <Filename Value="fpcorm\dbcore\fpcorm_dbcore_objects.pas"/>
+        <Caret Line="266" Column="37" TopLine="256"/>
       </Position6>
       <Position7>
-        <Filename Value="fpcorm\common\fpcorm_common_types.pas"/>
-        <Caret Line="48" Column="16" TopLine="28"/>
+        <Filename Value="fpcorm\dbcore\fpcorm_dbcore_objects.pas"/>
+        <Caret Line="321" Column="37" TopLine="309"/>
       </Position7>
       <Position8>
-        <Filename Value="fpcorm\common\fpcorm_common_types.pas"/>
-        <Caret Line="61" Column="1" TopLine="55"/>
+        <Filename Value="fpcorm\dbcore\fpcorm_dbcore_objects.pas"/>
+        <Caret Line="1883" Column="65" TopLine="1866"/>
       </Position8>
       <Position9>
-        <Filename Value="fpcorm\common\fpcorm_common_types.pas"/>
-        <Caret Line="47" Column="1" TopLine="31"/>
+        <Filename Value="fpcorm\dbcore\fpcorm_dbcore_objects.pas"/>
+        <Caret Line="318" Column="3" TopLine="307"/>
       </Position9>
       <Position10>
-        <Filename Value="fpcorm\common\fpcorm_common_types.pas"/>
-        <Caret Line="48" Column="35" TopLine="15"/>
+        <Filename Value="fpcorm\dbcore\fpcorm_dbcore_objects.pas"/>
+        <Caret Line="1" Column="1" TopLine="1"/>
       </Position10>
       <Position11>
         <Filename Value="fpcorm\dbcore\fpcorm_dbcore_objects.pas"/>
-        <Caret Line="288" Column="5" TopLine="275"/>
+        <Caret Line="41" Column="23" TopLine="22"/>
       </Position11>
       <Position12>
         <Filename Value="fpcorm\dbcore\fpcorm_dbcore_objects.pas"/>
-        <Caret Line="1877" Column="11" TopLine="1871"/>
+        <Caret Line="43" Column="25" TopLine="24"/>
       </Position12>
       <Position13>
         <Filename Value="fpcorm\dbcore\fpcorm_dbcore_objects.pas"/>
-        <Caret Line="288" Column="67" TopLine="274"/>
+        <Caret Line="267" Column="57" TopLine="248"/>
       </Position13>
       <Position14>
         <Filename Value="fpcorm\dbcore\fpcorm_dbcore_objects.pas"/>
-        <Caret Line="1872" Column="78" TopLine="1858"/>
+        <Caret Line="315" Column="29" TopLine="296"/>
       </Position14>
       <Position15>
         <Filename Value="fpcorm\dbcore\fpcorm_dbcore_objects.pas"/>
-        <Caret Line="238" Column="25" TopLine="222"/>
+        <Caret Line="318" Column="23" TopLine="299"/>
       </Position15>
       <Position16>
-        <Filename Value="fpcorm.pas"/>
-        <Caret Line="81" Column="3" TopLine="74"/>
+        <Filename Value="fpcorm\dbcore\fpcorm_dbcore_objects.pas"/>
+        <Caret Line="324" Column="70" TopLine="305"/>
       </Position16>
       <Position17>
         <Filename Value="fpcorm\dbcore\fpcorm_dbcore_objects.pas"/>
-        <Caret Line="292" Column="30" TopLine="280"/>
+        <Caret Line="1883" Column="57" TopLine="1865"/>
       </Position17>
       <Position18>
         <Filename Value="fpcorm\dbcore\fpcorm_dbcore_objects.pas"/>
-        <Caret Line="1890" Column="5" TopLine="1878"/>
+        <Caret Line="1" Column="1" TopLine="1"/>
       </Position18>
       <Position19>
         <Filename Value="fpcorm\dbcore\fpcorm_dbcore_objects.pas"/>
-        <Caret Line="267" Column="14" TopLine="254"/>
+        <Caret Line="41" Column="23" TopLine="22"/>
       </Position19>
       <Position20>
         <Filename Value="fpcorm\dbcore\fpcorm_dbcore_objects.pas"/>
-        <Caret Line="1892" Column="1" TopLine="1879"/>
+        <Caret Line="43" Column="25" TopLine="24"/>
       </Position20>
       <Position21>
         <Filename Value="fpcorm\dbcore\fpcorm_dbcore_objects.pas"/>
-        <Caret Line="1895" Column="1" TopLine="1878"/>
+        <Caret Line="267" Column="57" TopLine="248"/>
       </Position21>
       <Position22>
         <Filename Value="fpcorm\dbcore\fpcorm_dbcore_objects.pas"/>
-        <Caret Line="1887" Column="5" TopLine="1878"/>
+        <Caret Line="41" Column="1" TopLine="23"/>
       </Position22>
       <Position23>
-        <Filename Value="fpcorm\dbcore\fpcorm_dbcore_objects.pas"/>
-        <Caret Line="1895" Column="9" TopLine="1877"/>
+        <Filename Value="fpcorm.pas"/>
+        <Caret Line="107" Column="29" TopLine="91"/>
       </Position23>
       <Position24>
-        <Filename Value="fpcorm\dbcore\fpcorm_dbcore_objects.pas"/>
-        <Caret Line="1892" Column="5" TopLine="1877"/>
+        <Filename Value="fpcorm.pas"/>
+        <Caret Line="115" Column="10" TopLine="94"/>
       </Position24>
       <Position25>
-        <Filename Value="fpcorm\dbcore\fpcorm_dbcore_objects.pas"/>
-        <Caret Line="1899" Column="7" TopLine="1877"/>
+        <Filename Value="fpcorm.pas"/>
+        <Caret Line="95" Column="42" TopLine="84"/>
       </Position25>
       <Position26>
-        <Filename Value="fpcorm\dbcore\fpcorm_dbcore_objects.pas"/>
-        <Caret Line="1910" Column="23" TopLine="1885"/>
+        <Filename Value="fpcorm.pas"/>
+        <Caret Line="38" Column="49" TopLine="27"/>
       </Position26>
       <Position27>
-        <Filename Value="fpcorm\dbcore\fpcorm_dbcore_objects.pas"/>
-        <Caret Line="274" Column="64" TopLine="261"/>
+        <Filename Value="fpcorm.pas"/>
+        <Caret Line="109" Column="29" TopLine="94"/>
       </Position27>
       <Position28>
-        <Filename Value="fpcorm\dbcore\fpcorm_dbcore_objects.pas"/>
-        <Caret Line="1794" Column="42" TopLine="1793"/>
+        <Filename Value="fpcorm.pas"/>
+        <Caret Line="97" Column="21" TopLine="86"/>
       </Position28>
       <Position29>
-        <Filename Value="fpcorm\dbcore\fpcorm_dbcore_objects.pas"/>
-        <Caret Line="274" Column="29" TopLine="266"/>
+        <Filename Value="fpcorm.pas"/>
+        <Caret Line="99" Column="30" TopLine="80"/>
       </Position29>
       <Position30>
-        <Filename Value="fpcorm\dbcore\fpcorm_dbcore_objects.pas"/>
-        <Caret Line="1819" Column="14" TopLine="1802"/>
+        <Filename Value="fpcorm.pas"/>
+        <Caret Line="36" Column="19" TopLine="20"/>
       </Position30>
     </JumpHistory>
   </ProjectSession>

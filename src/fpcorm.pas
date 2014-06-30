@@ -14,13 +14,37 @@ uses
   fpcorm_dbcore_constants,
   fpcorm_dbcore_interfaces,
   fpcorm_dbcore_utils,
-  fpcorm_dbcore_objects;
+  fpcorm_dbcore_objects,
+  FGL;
 
 type
 
   { TfoApplication }
 
+  { TTestObj }
+
+  TTestObj = class(TObject)
+  private
+    fTestField: String;
+  public
+    constructor Create;
+    destructor Destroy; override;
+
+    property TestField: String read fTestField write fTestField;
+  end;
+
+  TTestObjPtr = ^TTestObj;
+  TTestObjPtrPtr = ^TTestObjPtr;
+
+  TTestObjList = specialize TFPGList<TTestObj>;
+  TTestObjPtrList = specialize TFPGList<TTestObjPtr>;
+  TTestObjPtrPtrList = specialize TFPGList<TTestObjPtrPtr>;
+  TPointerList = specialize TFPGList<Pointer>;
+
+
   TfoApplication = class(TCustomApplication)
+  private
+    aTestObjSource: TTestObj;
   protected
     procedure DoRun; override;
   public
@@ -29,12 +53,29 @@ type
     procedure WriteHelp; virtual;
   end;
 
+{ TTestObj }
+
+constructor TTestObj.Create;
+begin
+  inherited Create;
+end;
+
+destructor TTestObj.Destroy;
+begin
+  inherited Destroy;
+end;
+
 { TfoApplication }
 
 procedure TfoApplication.DoRun;
 var
   ErrorMsg: String;
   lSomeDateTime: TDateTime;
+  aTestObjSecondary: TTestObjPtr;
+  aTestList: TTestObjList;
+  aTestObjEnum: TTestObjPtr;
+  aPtr: Pointer;
+  aPointerList: TPointerList;
 begin
   // quick check parameters
   ErrorMsg := CheckOptions('h','help');
@@ -54,6 +95,46 @@ begin
   end;
 
   { add your program here }
+
+  // create generic pointer list
+  aTestList := TTestObjList.Create;
+  aPointerList := TPointerList.Create;
+
+  try
+
+    aPtr := @aTestObjSource;
+
+    aTestObjSource := TTestObj.Create;
+    aTestObjSource.TestField := 'testing';
+
+    // add the test object (source) to the list
+    // aTestList.Add(@@aTestObjSource);
+    //aPtr := @@aTestObjSource;
+    //
+    //// assign local reference (secondary) to the class reference
+    //aTestObjSecondary := @@aTestObjSource;
+    //
+    //// create and assign the field in the class reference
+    //
+    //// go through the list, and print all the enumerated objects fields
+    //for aTestObjEnum in aTestList do
+    //begin
+    //  WriteLn(aTestObjEnum^.TestField);
+    //end;
+    //
+    //// attempt to print the directly assigned (pre creation) seconday field value
+    //WriteLn(aTestObjSecondary.TestField);
+    //
+    //
+
+    finally
+    begin
+      aTestList.Free;
+      aTestObjSource.Free;
+      aPointerList.Free;
+    end;
+  end;
+
 
   // Byte	      0 .. 255	                                    1
   WriteLn(Format('Low(Byte) = %u', [Low(Byte)]));
