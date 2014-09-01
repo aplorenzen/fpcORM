@@ -1,0 +1,22 @@
+fpcORM
+
+Working notes
+
+2014-08-30: APL:
+Rediscovering the project.
+Have just started inspecting the source. First point of order, is to locate the point in my trail of thoughts on the project where I left off. What is a good way to manage that I wonder? How do others deepfreeze projects and open them up again efficiently? Do others?
+
+There was a build problem related to the function type "TfoDBForeignKeyReferencingListFunction" and the related generic list decending type for that: "TfoDBForeignKeyReferencingListFunctionList". The build error was this: "fpcorm.pas(253,1) Error: Undefined symbol: VMT_FPCORM_DBCORE_OBJECTS_TFPGLIST$TFODBFOREIGNKEYREFERENCINGLISTFUNCTION_$__TFPGLISTENUMERATOR$TFODBFOREIGNKEYREFERENCINGLISTFUNCTI
+" - and it appears that the compiler is asked to handle a symbol that it does not know of. This should not be possible by the simple validation of the compile, usually one would get an error in some code line where a symbol would be used, that would not have been declared previously. That was not the case here. The function name appears invalid in the message though, which lead me to belive that either the compiler output message was capped, or that identifier was in fact what it was looking for. Smelled like there might be a upper limit to the length of the identifiers, that had not been detected before the symbol was attempted used. Since it was related to the generics of fpc, which is still quite new, and since I suspect the symbol in the error message is an autogenereated enumerator type, that inherits its name from it's owner type, I thought that I might remedy this by simple renaming the generic list decendant that I was declaring. And yes, by renaming "TfoDBForeignKeyReferencingListFunction" to "TfoDBFKReferencingListFunction" and "TfoDBForeignKeyReferencingListFunctionList" to "TfoDBFKReferencingListFunctionList", the build error went away.
+
+I can now resume looking for the point where I left off. I suspect, from the initial build error, that I was constructing the final table super object, and working on the insert, update, delete and fecth functions. Since, in this design "version 2" (if we consider DORM version 1), I will try to contain those functions in the super classes of the generated code objects, rather than generating them in code from the source model. Saving a lot of code lines basically, and also increasing managability I would argue. Would it perhaps be an option to allow the user to select if the code should be written explicitly in each object, or kept in the super classes?
+
+A thought: "should release 1.0 just feature MS SQL database usage? Since that iswhat I have the most experience with?"
+
+I believe that this function is where I should start working again: "function TfoDBTableObject.Insert: Boolean;". Is is the super function for inserting table objects.
+
+A thought: "What about logging support? And access to executed SQL?"
+
+Ok, so I've now abandoned the idea of having the insert, update and delete functions in the super class of the table objects, it seems near impossible to keep track of the FK and PK pairs when doing the nested inserting, especially for the table objects that are referencing the object being inserted. When using the needed abstraction, to have the object lists in a list in fpc, I loose knowledge in the code, of what object I am insertnig, and thus, what FK value should also be updated after the insert in the owning object, or visa versa.
+
+Looks like the DORM way, is the only way to handle this for now. This is an important recognizion for the rest of the process, and one that will form much of the remaining code.

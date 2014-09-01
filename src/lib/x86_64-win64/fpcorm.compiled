@@ -2,4 +2,5 @@
 <CONFIG>
   <Compiler Value="F:\Andreas\lazarus\fpc\2.6.2\bin\x86_64-win64\fpc.exe" Date="1120493294"/>
   <Params Value=" -MObjFPC -Scghi -g -gl -gh -vewnhi -FiF:\Documents\GitHub\fpcORM\src\lib\x86_64-win64 -FlF:\Documents\GitHub\fpcORM\src\console\usr\local\lib -FlF:\Documents\GitHub\fpcORM\src\console\usr\lib -FuF:\Documents\GitHub\fpcORM\src\console\common -FuF:\Documents\GitHub\fpcORM\src\console\codebuilder -FuF:\Documents\GitHub\fpcORM\src\console\ui -FuF:\Documents\GitHub\fpcORM\src\console\test -FuF:\Documents\GitHub\fpcORM\src\dbobjects -FuF:\Documents\GitHub\fpcORM\src\fpcorm\common -FuF:\Documents\GitHub\fpcORM\src\fpcorm\dbcore -FuF:\Documents\GitHub\fpcORM\src\ -FUF:\Documents\GitHub\fpcORM\src\lib\x86_64-win64\ -l -gl fpcorm.pas"/>
+  <Complete Value="False"/>
 </CONFIG>

@@ -15,23 +15,31 @@ uses
   fpcorm_dbcore_interfaces,
   fpcorm_dbcore_utils,
   fpcorm_dbcore_objects,
-  FGL;
+  FGL, fpcorm_dbcore_types_test;
 
 type
 
   { TfoApplication }
+
 
   { TTestObj }
 
   TTestObj = class(TObject)
   private
     fTestField: String;
+
+    function _GetTestField: String;
   public
     constructor Create;
     destructor Destroy; override;
 
     property TestField: String read fTestField write fTestField;
   end;
+
+  TTestFunc = function (): String of object;
+  TTestObjFunc = function(): TTestObj of object;
+  TTestFuncList = specialize TFPGList<TTestFunc>;
+  TTestObjFuncList = specialize TFPGList<TTestObjFunc>;
 
   TTestObjPtr = ^TTestObj;
   TTestObjPtrPtr = ^TTestObjPtr;
@@ -45,6 +53,8 @@ type
   TfoApplication = class(TCustomApplication)
   private
     aTestObjSource: TTestObj;
+
+    function _GetaTestObjSource(): TTestObj;
   protected
     procedure DoRun; override;
   public
@@ -54,6 +64,11 @@ type
   end;
 
 { TTestObj }
+
+function TTestObj._GetTestField: String;
+begin
+  Result := fTestField;
+end;
 
 constructor TTestObj.Create;
 begin
@@ -67,6 +82,11 @@ end;
 
 { TfoApplication }
 
+function TfoApplication._GetaTestObjSource: TTestObj;
+begin
+  Result := aTestObjSource;
+end;
+
 procedure TfoApplication.DoRun;
 var
   ErrorMsg: String;
@@ -76,6 +96,9 @@ var
   aTestObjEnum: TTestObjPtr;
   aPtr: Pointer;
   aPointerList: TPointerList;
+  afunclist: TTestFuncList;
+  TestObjFuncList: TTestObjFuncList;
+  TestObjFunc: TTestObjFunc;
 begin
   // quick check parameters
   ErrorMsg := CheckOptions('h','help');
@@ -97,15 +120,21 @@ begin
   { add your program here }
 
   // create generic pointer list
-  aTestList := TTestObjList.Create;
-  aPointerList := TPointerList.Create;
+  //aTestList := TTestObjList.Create;
+  //aPointerList := TPointerList.Create;
+  //afunclist := TTestFuncList.Create;
+  TestObjFuncList := TTestObjFuncList.Create;
 
   try
-
-    aPtr := @aTestObjSource;
+    TestObjFuncList.Add(@_GetaTestObjSource);
 
     aTestObjSource := TTestObj.Create;
     aTestObjSource.TestField := 'testing';
+
+    for TestObjFunc in TestObjFuncList do
+    begin
+      WriteLn(TestObjFunc().TestField);
+    end;
 
     // add the test object (source) to the list
     // aTestList.Add(@@aTestObjSource);
@@ -127,11 +156,11 @@ begin
     //
     //
 
+
+
     finally
     begin
-      aTestList.Free;
-      aTestObjSource.Free;
-      aPointerList.Free;
+      TestObjFuncList.Free;
     end;
   end;
 

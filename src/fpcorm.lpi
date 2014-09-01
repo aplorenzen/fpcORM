@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <CONFIG>
   <ProjectOptions>
     <Version Value="9"/>
@@ -21,7 +21,7 @@
       <AutoIncrementBuild Value="True"/>
       <MinorVersionNr Value="1"/>
       <RevisionNr Value="1"/>
-      <BuildNr Value="33"/>
+      <BuildNr Value="49"/>
       <StringTable ProductVersion=""/>
     </VersionInfo>
     <BuildModes Count="1">
@@ -37,7 +37,7 @@
         <FormatVersion Value="1"/>
       </local>
     </RunParams>
-    <Units Count="8">
+    <Units Count="9">
       <Unit0>
         <Filename Value="fpcorm.pas"/>
         <IsPartOfProject Value="True"/>
@@ -78,6 +78,11 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="fpcorm_common_constants"/>
       </Unit7>
+      <Unit8>
+        <Filename Value="fpcorm/test/fpcorm_dbcore_types_test.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="fpcorm_dbcore_types_test"/>
+      </Unit8>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
@@ -88,7 +93,7 @@
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
       <Libraries Value="console/usr/local/lib;console/usr/lib"/>
-      <OtherUnitFiles Value="console/common;console/codebuilder;console/ui;console/test;dbobjects;fpcorm/common;fpcorm/dbcore"/>
+      <OtherUnitFiles Value="console/common;console/codebuilder;console/ui;console/test;dbobjects;fpcorm/common;fpcorm/dbcore;test;fpcorm/test"/>
       <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
     <CodeGeneration>

@@ -54,13 +54,20 @@ Count=0
 Count=0
 
 [IncludeDirectories]
-Count=1
+Count=3
 Item_0=..\src\dbobjects
+Item_1=..\src\fpcorm\common
+Item_2=..\src\fpcorm\dbcore
 
 [Files]
-Count=2
-Item_0=..\src\dbobjects\fpcormdbobjects.pas
-Item_1=..\src\dbobjects\fpcormdbutils.pas
+Count=7
+Item_0=..\src\fpcorm\common\fpcorm_common_constants.pas
+Item_1=..\src\fpcorm\common\fpcorm_common_interfaces.pas
+Item_2=..\src\fpcorm\common\fpcorm_common_types.pas
+Item_3=..\src\fpcorm\dbcore\fpcorm_dbcore_constants.pas
+Item_4=..\src\fpcorm\dbcore\fpcorm_dbcore_interfaces.pas
+Item_5=..\src\fpcorm\dbcore\fpcorm_dbcore_objects.pas
+Item_6=..\src\fpcorm\dbcore\fpcorm_dbcore_utils.pas
 
 [HyphenatedWords]
 Count=0

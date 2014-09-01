@@ -21,26 +21,33 @@ uses
   SyncObjs,
   SQLDB,
   FGL,
+  DateUtils,
 
   fpcorm_common_interfaces,
   fpcorm_common_types,
 
   fpcorm_dbcore_utils,
-  fpcorm_dbcore_constants,
-
-    dateutils;
+  fpcorm_dbcore_constants;
 
 type
-  { forward declaration of interfaces }
-  //IfoDBObject = interface;
-  //IfoDBTable = interface;
-  //IfoDBTableField = interface;
-  //
-  //{ forward declaration of classes }
+  { Forward declaration of the TfoDBTableObject class, the base type of the
+    'object that wraps a table'. }
   TfoDBTableObject = class;
-  { Cannot fowrward declare specialized generic types!? }
-  { TfoDBTableObjectList = class; }
 
+  { This function type signature, takes no argument and returns a
+    TfoDBTableObject. The intention is to make a list from this type, to hold in
+    the TfoDBTableObject type, holding all the foreign key referenced table
+    objects, in a list for use when inserting and updating. }
+  TfoDBFKReferenceFunction = function(): TfoDBTableObject of object;
+
+
+  { The TfoDBTableObjectList type, is used for holding a generic list of all the
+    foreign key referenced objects that are referenced with a foreign key field
+    from this table object. }
+  TfoDBTableObjectList = specialize TFPGList<TfoDBTableObject>;
+  generic TfoDBGenricTableObjectList<T> = class(TfoDBTableObjectList);
+
+  { TODO -oAPL -cDBTypes 5: Comment these forward declarations. }
   TfoDBTableFieldByte = class;
   TfoDBTableFieldShortInt = class;
   TfoDBTableFieldSmallInt = class;
@@ -57,20 +64,10 @@ type
   TfoDBTableFieldString = class;
   TfoDBTableFieldDateTime = class;
 
-  //TfoDBObjectStatus = class;
-  //TfoDBTableInformation = class;
-  //{ seems that one cannot make forward declaration of generic or specialized types? }
-  //{ TfoDBTableField = class; }
-  //{ TfoDBTableFieldList = class; }
-  //
-  //TfoDBAbstractTableField = class;
-
-
   { This type represents a field in a table, a specific field in a specific row,
     but without it's value at this abstract level. All the other properties of
     the field are implemented at this level though. }
-
-  TfoDBAbstractTableField = class(TfoObserverSubject)
+  TfoDBTableField = class(TfoObserverSubject)
   private
     fOwnerTable: TfoDBTableObject;
     fFieldName: String;
@@ -96,7 +93,7 @@ type
     function ToSql(): String; virtual; abstract;
     function ToXML(): String; virtual; abstract;
     function AsString(): String; virtual; abstract;
-    procedure CopyValue(aTableField: TfoDBAbstractTableField); virtual; abstract;
+    procedure CopyValue(aTableField: TfoDBTableField); virtual; abstract;
 
     property OwnerTable: TfoDBTableObject read fOwnerTable;
     property FieldName: String read fFieldName write fFieldName;
@@ -110,52 +107,32 @@ type
   end;
 
   { This list type, is a specialization of a generic pointer list, by the
-    TfoDBAbstractTableField type. Essentially this list type can contain a range
+    TfoDBTableField type. Essentially this list type can contain a range
     of abstract database table fields, without access to their actual local
     values. However, the values a can be accessed in the ToSql, ToXML and
-    AsString functions, in the TfoDBAbstractTableField, for passing it to the
+    AsString functions, in the TfoDBTableField, for passing it to the
     database, an XML document or to a GUI as a String f.ex. }
+  TfoDBTableFieldList = specialize TFPGList<TfoDBTableField>;
 
-  TfoDBTableFieldList = specialize TFPGList<TfoDBAbstractTableField>;
+  { TfoDBGenericTableField }
+  generic TfoDBGenericTableField<T> = class(TfoDBTableField)
+  private
+    fValue: T;
 
-  //{ IfoDBObject }
-  //IfoDBObject = interface(IInterface)
-  //  ['{3BCDE6E8-2406-4FE1-9584-E16DD5B7496E}']
-  //  function GetConnection(): TSQLConnector;
-  //  procedure SetConnection(aConnection: TSQLConnector);
-  //end;
-  //
-  //IfoDBTable = interface(IfoDBObject)
-  //  ['{57363BA5-AF19-42FE-A7F6-3C52096D24C0}']
-  //  function GetTableInformation(): TfoDBTableInformation;
-  //  procedure SetTableInformation(aTableInformation: TfoDBTableInformation);
-  //end;
-  //
-  //IfoDBTableField = interface(IInterface)
-  //  ['{C1C665A2-6F77-418B-B4A0-50B4F9B65239}']
-  //  function GetFieldName: String;
-  //  procedure SetFieldName(aFieldName: String);
-  //  function GetIsNull: Boolean;
-  //  procedure SetIsNull(aIsNull: Boolean);
-  //  function GetIsAssigned: Boolean;
-  //  procedure SetIsAssigned(aIsAssigned: Boolean);
-  //  function GetIsChanged: Boolean;
-  //  procedure SetIsChanged(aIsChanged: Boolean);
-  //  function GetIsIndexed: Boolean;
-  //  procedure SetIsIndexed(aIsIndexed: Boolean);
-  //  function GetIsForeignKey: Boolean;
-  //  procedure SetIsForeignKey(aIsForeignKey: Boolean);
-  //  function GetIsPrimaryKey: Boolean;
-  //  procedure SetIsPrimaryKey(aIsPrimaryKey: Boolean);
-  //  function GetHasDefault: Boolean;
-  //  procedure SetHasDefault(aHasDefault: Boolean);
-  //  function GetOwnerTable: TfoDBTableObject;
-  //  procedure SetOwnerTable(AOwnerTable: TfoDBTableObject);
-  //  function ToSql(): String;
-  //  function ToXML(): String;
-  //  function AsString(): String;
-  //end;
+    procedure SetValue(aValue: T);
+  protected
+    procedure ClearValue; override;
+  public
+    constructor Create(aOwnerTable: TfoDBTableObject; aFieldName: String = '');
+    destructor Destroy; override;
+    procedure CopyValue(aTableField: TfoDBTableField); override;
 
+    function ToSql(): String; override;
+    function ToXML(): String; override;
+    function AsString(): String; override;
+
+    property Value: T read fValue write SetValue;
+  end;
 
   { TODO -oAPL -cDBTypes 2: Clean up the TfoDBObjectStatus object - no need for
     all those messy setters and getters I think? }
@@ -171,9 +148,6 @@ type
     be handled in the subclass fieldnaming logic, but it would mean that some
     fields will have one name in the database, and another in the generated
     type. Which is unwanted. }
-
-  { TfoDBTableStatus }
-
   TfoDBTableStatus = class(TInterfacedPersistent)
   private
     fOwnerTable: TfoDBTableObject;
@@ -187,6 +161,10 @@ type
     fChangedTime: TDateTime;
     fSavedTime: TDateTime;
     fDeletedTime: TDateTime;
+
+    fIsInserting: Boolean;
+    fIsDeleting: Boolean;
+    fIsUpdating: Boolean;
 
     procedure SetIsNew(aIsNew: Boolean);
     procedure SetIsLoaded(aIsLoaded: Boolean);
@@ -206,10 +184,14 @@ type
     property ChangedTime: TDateTime read fChangedTime write fChangedTime;
     property SavedTime: TDateTime read fSavedTime write fSavedTime;
     property DeletedTime: TDateTime read fDeletedTime write fDeletedTime;
+
+    property IsInserting: Boolean read fIsInserting write fIsInserting;
+    property IsDeleting: Boolean read fIsDeleting write fIsDeleting;
+    property IsUpdating: Boolean read fIsUpdating write fIsUpdating;
+
   end;
 
   { TfoDBTableInformation }
-
   TfoDBTableInformation = class(TInterfacedPersistent)
   private
     fTableCatalog: String;
@@ -221,41 +203,18 @@ type
     constructor Create;
     destructor Destroy; override;
     { TODO -oAPL -cDBTypes 2: TfoDBTableInformation: Implement getters, setters and properties here }
+
+  published
+    property TableCatalog: String read fTableCatalog write fTableCatalog;
+    property TableSchema: String read fTableSchema write fTableSchema;
+    property TableName: String read fTableName write fTableName;
+    property TableType: String read fTableType write fTableType;
   end;
-
-  { TfoDBTableField }
-
-  generic TfoDBTableField<T> = class(TfoDBAbstractTableField)
-  private
-    fValue: T;
-
-    procedure SetValue(aValue: T);
-  protected
-    procedure ClearValue; override;
-  public
-    constructor Create(aOwnerTable: TfoDBTableObject; aFieldName: String = '');
-    destructor Destroy; override;
-    procedure CopyValue(aTableField: TfoDBAbstractTableField); override;
-
-    function ToSql(): String; override;
-    function ToXML(): String; override;
-    function AsString(): String; override;
-
-    property Value: T read fValue write SetValue;
-  end;
-
-  { The TfoDBTableObjectList type, is used for holding a generic list of all the
-    foreign key referenced objects that are referenced with a foreign key field
-    from this table object }
-  TfoDBTableObjectList = specialize TFPGList<TfoDBTableObject>;
-
-  { The TfoDBTableObjectListList type, is a local list of all the objects that
-    are referencing this table object with a foreign key in their own table,
-    that points to the PK in this table. Each of the TfoDBTableObjectLists in
-    this list, represent a table that references this table with a foreign key }
-  TfoDBTableObjectListList = specialize TFPGList<TfoDBTableObjectList>;
 
   { The TfoDBTableObject object, represents a database table... more info here }
+
+  { TfoDBTableObject }
+
   TfoDBTableObject = class(TfoObserver)
   private
     fConnection: TSQLConnector;
@@ -268,12 +227,6 @@ type
     fIsDestroying: Boolean;
 
     fOpenedConnection: Boolean;
-
-    { An untyped list of all the table objects that are referenced from this
-      table object, by foreign key relations in the database structure.
-      Decending types should add their foreign references to this list with the
-      AddForeignKeyReferencedTableObject procedure. }
-    fForeignReferencedTableObjects: TfoDBTableObjectList;
   protected
     { The OpenConnection function provides the trivial means of opening the
       database connection to the decendant types. @return(True if the connection
@@ -289,26 +242,26 @@ type
       indicates to the function, if any exception caused should be silenced, or
       re-raised to the caller.) }
     function CloseConnection(aConsumeException: Boolean = False): Boolean;
+
   public
     constructor Create(aConnection: TSQLConnector; aMutex: TCriticalSection);
     destructor Destroy; override;
 
     { AddTableField is intended to be called from the constructors of the fields
       that are owned by the decending object from this class. Upon creation, a
-      new field (decending from TfoDBAbstractTableField) is passed it's owning table as a constructor parameter. The
+      new field (decending from TfoDBTableField) is passed it's owning table as a constructor parameter. The
       field should in turn then call it's owner's AddTableField procedure, to
       add itself to it's table's field collection. So that the table object has
       a complete list of all the fields that are contained in it. }
-    procedure AddTableField(aTableField: TfoDBAbstractTableField);
+    procedure AddTableField(aTableField: TfoDBTableField);
     { This function }
-    procedure AddForeignKeyReferencedTableObject(aTableObject: TfoDBTableObject);
+    // procedure AddForeignKeyReferencedTableObject(aTableObject: TfoDBTableObject);
 
     function Load_OpenSQL(aSQL: String): Boolean; virtual; abstract;
     procedure ReceiveSubjectUpdate(aSubject: IfoObserverSubject); override;
 
-    // function LoadBy_PK_REC_ID(AREC_ID: Integer; AOwnerInfo: TTableItem = nil): Boolean;
-    // function InsertAsNew(): Boolean;
-    function Insert: Boolean;
+    function InsertAsNew: Boolean; virtual; abstract;
+    function Update: Boolean; virtual; abstract;
 
     // the LoadedOrNotNew function may not be nessecary, it was used to 'probe' if an instance was loaded, when using lazyloading
     // function LoadedOrNotNew(AFreeIfNot: Boolean = True): Boolean;
@@ -339,7 +292,7 @@ type
 
   { TfoDBTableFieldByte }
 
-  TfoDBTableFieldByte = class(specialize TfoDBTableField<Byte>)
+  TfoDBTableFieldByte = class(specialize TfoDBGenericTableField<Byte>)
   public
     destructor Destroy; override;
 
@@ -347,7 +300,7 @@ type
     function ToSql(): String; override;
     function ToXML(): String; override;
     function AsString(): String; override;
-    procedure CopyValue(aTableField: TfoDBAbstractTableField); override;
+    procedure CopyValue(aTableField: TfoDBTableField); override;
     //function ValueEquals(aTableField: TfoDBTableFieldByte): Boolean; overload;
     //function ValueEquals(aTableField: TfoDBTableFieldShortInt): Boolean; overload;
     //function ValueEquals(aTableField: TfoDBTableFieldSmallInt): Boolean; overload;
@@ -367,7 +320,7 @@ type
 
   { TfoDBTableFieldShortInt }
 
-  TfoDBTableFieldShortInt = class(specialize TfoDBTableField<ShortInt>)
+  TfoDBTableFieldShortInt = class(specialize TfoDBGenericTableField<ShortInt>)
   public
     destructor Destroy; override;
 
@@ -375,7 +328,7 @@ type
     function ToSql(): String; override;
     function ToXML(): String; override;
     function AsString(): String; override;
-    //procedure CopyValue(aTableField: TfoDBAbstractTableField); override;
+    //procedure CopyValue(aTableField: TfoDBTableField); override;
     //function ValueEquals(aTableField: TfoDBTableFieldByte): Boolean; overload;
     //function ValueEquals(aTableField: TfoDBTableFieldShortInt): Boolean; overload;
     //function ValueEquals(aTableField: TfoDBTableFieldSmallInt): Boolean; overload;
@@ -395,7 +348,7 @@ type
 
   { TfoDBTableFieldSmallInt }
 
-  TfoDBTableFieldSmallInt = class(specialize TfoDBTableField<SmallInt>)
+  TfoDBTableFieldSmallInt = class(specialize TfoDBGenericTableField<SmallInt>)
   public
     destructor Destroy; override;
 
@@ -403,7 +356,7 @@ type
     function ToSql(): String; override;
     function ToXML(): String; override;
     function AsString(): String; override;
-    //procedure CopyValue(aTableField: TfoDBAbstractTableField); override;
+    //procedure CopyValue(aTableField: TfoDBTableField); override;
     //function ValueEquals(aTableField: TfoDBTableFieldByte): Boolean; overload;
     //function ValueEquals(aTableField: TfoDBTableFieldShortInt): Boolean; overload;
     //function ValueEquals(aTableField: TfoDBTableFieldSmallInt): Boolean; overload;
@@ -423,7 +376,7 @@ type
 
   { TfoDBTableFieldWord }
 
-  TfoDBTableFieldWord = class(specialize TfoDBTableField<Word>)
+  TfoDBTableFieldWord = class(specialize TfoDBGenericTableField<Word>)
   public
     destructor Destroy; override;
 
@@ -431,7 +384,7 @@ type
     function ToSql(): String; override;
     function ToXML(): String; override;
     function AsString(): String; override;
-    //procedure CopyValue(aTableField: TfoDBAbstractTableField); override;
+    //procedure CopyValue(aTableField: TfoDBTableField); override;
     //function ValueEquals(aTableField: TfoDBTableFieldByte): Boolean; overload;
     //function ValueEquals(aTableField: TfoDBTableFieldShortInt): Boolean; overload;
     //function ValueEquals(aTableField: TfoDBTableFieldSmallInt): Boolean; overload;
@@ -451,7 +404,7 @@ type
 
   { TfoDBTableFieldLongInt }
 
-  TfoDBTableFieldLongInt = class(specialize TfoDBTableField<LongInt>)
+  TfoDBTableFieldLongInt = class(specialize TfoDBGenericTableField<LongInt>)
   public
     destructor Destroy; override;
 
@@ -459,7 +412,7 @@ type
     function ToSql(): String; override;
     function ToXML(): String; override;
     function AsString(): String; override;
-    //procedure CopyValue(aTableField: TfoDBAbstractTableField); override;
+    //procedure CopyValue(aTableField: TfoDBTableField); override;
     //function ValueEquals(aTableField: TfoDBTableFieldByte): Boolean; overload;
     //function ValueEquals(aTableField: TfoDBTableFieldShortInt): Boolean; overload;
     //function ValueEquals(aTableField: TfoDBTableFieldSmallInt): Boolean; overload;
@@ -479,7 +432,7 @@ type
 
   { TfoDBTableFieldLongWord }
 
-  TfoDBTableFieldLongWord = class(specialize TfoDBTableField<LongWord>)
+  TfoDBTableFieldLongWord = class(specialize TfoDBGenericTableField<LongWord>)
   public
     destructor Destroy; override;
 
@@ -487,7 +440,7 @@ type
     function ToSql(): String; override;
     function ToXML(): String; override;
     function AsString(): String; override;
-    //procedure CopyValue(aTableField: TfoDBAbstractTableField); override;
+    //procedure CopyValue(aTableField: TfoDBTableField); override;
     //function ValueEquals(aTableField: TfoDBTableFieldByte): Boolean; overload;
     //function ValueEquals(aTableField: TfoDBTableFieldShortInt): Boolean; overload;
     //function ValueEquals(aTableField: TfoDBTableFieldSmallInt): Boolean; overload;
@@ -507,7 +460,7 @@ type
 
    { TfoDBTableFieldInt64 }
 
-   TfoDBTableFieldInt64 = class(specialize TfoDBTableField<Int64>)
+   TfoDBTableFieldInt64 = class(specialize TfoDBGenericTableField<Int64>)
   public
     destructor Destroy; override;
 
@@ -515,7 +468,7 @@ type
     function ToSql(): String; override;
     function ToXML(): String; override;
     function AsString(): String; override;
-    //procedure CopyValue(aTableField: TfoDBAbstractTableField); override;
+    //procedure CopyValue(aTableField: TfoDBTableField); override;
     //function ValueEquals(aTableField: TfoDBTableFieldByte): Boolean; overload;
     //function ValueEquals(aTableField: TfoDBTableFieldShortInt): Boolean; overload;
     //function ValueEquals(aTableField: TfoDBTableFieldSmallInt): Boolean; overload;
@@ -535,7 +488,7 @@ type
 
   { TfoDBTableFieldQWord }
 
-  TfoDBTableFieldQWord = class(specialize TfoDBTableField<QWord>)
+  TfoDBTableFieldQWord = class(specialize TfoDBGenericTableField<QWord>)
   public
     destructor Destroy; override;
 
@@ -543,7 +496,7 @@ type
     function ToSql(): String; override;
     function ToXML(): String; override;
     function AsString(): String; override;
-    //procedure CopyValue(aTableField: TfoDBAbstractTableField); override;
+    //procedure CopyValue(aTableField: TfoDBTableField); override;
     //function ValueEquals(aTableField: TfoDBTableFieldByte): Boolean; overload;
     //function ValueEquals(aTableField: TfoDBTableFieldShortInt): Boolean; overload;
     //function ValueEquals(aTableField: TfoDBTableFieldSmallInt): Boolean; overload;
@@ -568,7 +521,7 @@ type
 
   { TfoDBTableFieldBoolean }
 
-  TfoDBTableFieldBoolean = class(specialize TfoDBTableField<Boolean>)
+  TfoDBTableFieldBoolean = class(specialize TfoDBGenericTableField<Boolean>)
   public
     destructor Destroy; override;
 
@@ -576,7 +529,7 @@ type
     function ToSql(): String; override;
     function ToXML(): String; override;
     function AsString(): String; override;
-    //procedure CopyValue(aTableField: TfoDBAbstractTableField); override;
+    //procedure CopyValue(aTableField: TfoDBTableField); override;
     //function ValueEquals(aTableField: TfoDBTableFieldByte): Boolean; overload;
     //function ValueEquals(aTableField: TfoDBTableFieldShortInt): Boolean; overload;
     //function ValueEquals(aTableField: TfoDBTableFieldSmallInt): Boolean; overload;
@@ -607,7 +560,7 @@ type
 
   { TfoDBTableFieldSingle }
 
-  TfoDBTableFieldSingle = class(specialize TfoDBTableField<Single>)
+  TfoDBTableFieldSingle = class(specialize TfoDBGenericTableField<Single>)
   public
     destructor Destroy; override;
 
@@ -615,7 +568,7 @@ type
     function ToSql(): String; override;
     function ToXML(): String; override;
     function AsString(): String; override;
-    //procedure CopyValue(aTableField: TfoDBAbstractTableField); override;
+    //procedure CopyValue(aTableField: TfoDBTableField); override;
     //function ValueEquals(aTableField: TfoDBTableFieldByte): Boolean; overload;
     //function ValueEquals(aTableField: TfoDBTableFieldShortInt): Boolean; overload;
     //function ValueEquals(aTableField: TfoDBTableFieldSmallInt): Boolean; overload;
@@ -635,7 +588,7 @@ type
 
   { TfoDBTableFieldDouble }
 
-  TfoDBTableFieldDouble = class(specialize TfoDBTableField<Double>)
+  TfoDBTableFieldDouble = class(specialize TfoDBGenericTableField<Double>)
   public
     destructor Destroy; override;
 
@@ -643,7 +596,7 @@ type
     function ToSql(): String; override;
     function ToXML(): String; override;
     function AsString(): String; override;
-    //procedure CopyValue(aTableField: TfoDBAbstractTableField); override;
+    //procedure CopyValue(aTableField: TfoDBTableField); override;
     //function ValueEquals(aTableField: TfoDBTableFieldByte): Boolean; overload;
     //function ValueEquals(aTableField: TfoDBTableFieldShortInt): Boolean; overload;
     //function ValueEquals(aTableField: TfoDBTableFieldSmallInt): Boolean; overload;
@@ -663,7 +616,7 @@ type
 
   { TfoDBTableFieldExtended }
 
-  TfoDBTableFieldExtended = class(specialize TfoDBTableField<Extended>)
+  TfoDBTableFieldExtended = class(specialize TfoDBGenericTableField<Extended>)
   public
     destructor Destroy; override;
 
@@ -671,7 +624,7 @@ type
     function ToSql(): String; override;
     function ToXML(): String; override;
     function AsString(): String; override;
-    //procedure CopyValue(aTableField: TfoDBAbstractTableField); override;
+    //procedure CopyValue(aTableField: TfoDBTableField); override;
     //function ValueEquals(aTableField: TfoDBTableFieldByte): Boolean; overload;
     //function ValueEquals(aTableField: TfoDBTableFieldShortInt): Boolean; overload;
     //function ValueEquals(aTableField: TfoDBTableFieldSmallInt): Boolean; overload;
@@ -691,7 +644,7 @@ type
 
   { TfoDBTableFieldCurrency }
 
-  TfoDBTableFieldCurrency = class(specialize TfoDBTableField<Currency>)
+  TfoDBTableFieldCurrency = class(specialize TfoDBGenericTableField<Currency>)
   public
     destructor Destroy; override;
 
@@ -699,7 +652,7 @@ type
     function ToSql(): String; override;
     function ToXML(): String; override;
     function AsString(): String; override;
-    //procedure CopyValue(aTableField: TfoDBAbstractTableField); override;
+    //procedure CopyValue(aTableField: TfoDBTableField); override;
     //function ValueEquals(aTableField: TfoDBTableFieldByte): Boolean; overload;
     //function ValueEquals(aTableField: TfoDBTableFieldShortInt): Boolean; overload;
     //function ValueEquals(aTableField: TfoDBTableFieldSmallInt): Boolean; overload;
@@ -719,7 +672,7 @@ type
 
   { TfoDBTableFieldString }
 
-  TfoDBTableFieldString = class(specialize TfoDBTableField<String>)
+  TfoDBTableFieldString = class(specialize TfoDBGenericTableField<String>)
   public
     destructor Destroy; override;
 
@@ -727,7 +680,7 @@ type
     function ToSql(): String; override;
     function ToXML(): String; override;
     function AsString(): String; override;
-    //procedure CopyValue(aTableField: TfoDBAbstractTableField); override;
+    //procedure CopyValue(aTableField: TfoDBTableField); override;
     //function ValueEquals(aTableField: TfoDBTableFieldByte): Boolean; overload;
     //function ValueEquals(aTableField: TfoDBTableFieldShortInt): Boolean; overload;
     //function ValueEquals(aTableField: TfoDBTableFieldSmallInt): Boolean; overload;
@@ -747,7 +700,7 @@ type
 
   { TfoDBTableFieldDateTime }
 
-  TfoDBTableFieldDateTime = class(specialize TfoDBTableField<TDateTime>)
+  TfoDBTableFieldDateTime = class(specialize TfoDBGenericTableField<TDateTime>)
   public
     destructor Destroy; override;
 
@@ -755,7 +708,7 @@ type
     function ToSql(): String; override;
     function ToXML(): String; override;
     function AsString(): String; override;
-    //procedure CopyValue(aTableField: TfoDBAbstractTableField); override;
+    //procedure CopyValue(aTableField: TfoDBTableField); override;
     //function ValueEquals(aTableField: TfoDBTableFieldByte): Boolean; overload;
     //function ValueEquals(aTableField: TfoDBTableFieldShortInt): Boolean; overload;
     //function ValueEquals(aTableField: TfoDBTableFieldSmallInt): Boolean; overload;
@@ -775,9 +728,9 @@ type
 
 implementation
 
-{ TfoDBAbstractTableField }
+{ TfoDBTableField }
 
-procedure TfoDBAbstractTableField.SetIsNull(aIsNull: Boolean);
+procedure TfoDBTableField.SetIsNull(aIsNull: Boolean);
 begin
   { If the field value is not already set to null }
   if fIsNull <> aIsNull then
@@ -797,7 +750,7 @@ begin
     Since creating a new object with a not nullable field should be possible }
 end;
 
-procedure TfoDBAbstractTableField.SetIsChanged(aIsChanged: Boolean);
+procedure TfoDBTableField.SetIsChanged(aIsChanged: Boolean);
 begin
   { Set whether ths value of this field has been changed }
   fIsChanged := aIsChanged;
@@ -806,7 +759,7 @@ begin
   NotifyAllObservers;
 end;
 
-constructor TfoDBAbstractTableField.Create(aOwnerTable: TfoDBTableObject; aFieldName: String);
+constructor TfoDBTableField.Create(aOwnerTable: TfoDBTableObject; aFieldName: String);
 begin
   inherited Create;
 
@@ -835,7 +788,7 @@ begin
   ClearValue;
 end;
 
-destructor TfoDBAbstractTableField.Destroy;
+destructor TfoDBTableField.Destroy;
 begin
   inherited Destroy;
 end;
@@ -1556,7 +1509,7 @@ begin
     Result := IntToStr(fValue);
 end;
 
-procedure TfoDBTableFieldByte.CopyValue(aTableField: TfoDBAbstractTableField);
+procedure TfoDBTableFieldByte.CopyValue(aTableField: TfoDBTableField);
 begin
   inherited CopyValue(aTableField);
 
@@ -1684,46 +1637,46 @@ begin
   inherited Destroy;
 end;
 
-constructor TfoDBTableField.Create(aOwnerTable: TfoDBTableObject; aFieldName: String);
+constructor TfoDBGenericTableField.Create(aOwnerTable: TfoDBTableObject; aFieldName: String);
 begin
   { Call inherited create }
   inherited Create(aOwnerTable, aFieldName);
 end;
 
-destructor TfoDBTableField.Destroy;
+destructor TfoDBGenericTableField.Destroy;
 begin
   { Call inherited destroy  }
   inherited Destroy;
 end;
 
-procedure TfoDBTableField.CopyValue(aTableField: TfoDBAbstractTableField);
+procedure TfoDBGenericTableField.CopyValue(aTableField: TfoDBTableField);
 begin
   { Does nothing at this stage, only implemented because I don't seem to be able
     to inherit an abstract function into another abstract function }
 end;
 
-function TfoDBTableField.ToSql: String;
-begin
-  { Does nothing at this stage, only implemented because I don't seem to be able
-    to inherit an abstract function into another abstract function }
-  Result := '';
-end;
-
-function TfoDBTableField.ToXML: String;
+function TfoDBGenericTableField.ToSql: String;
 begin
   { Does nothing at this stage, only implemented because I don't seem to be able
     to inherit an abstract function into another abstract function }
   Result := '';
 end;
 
-function TfoDBTableField.AsString: String;
+function TfoDBGenericTableField.ToXML: String;
 begin
   { Does nothing at this stage, only implemented because I don't seem to be able
     to inherit an abstract function into another abstract function }
   Result := '';
 end;
 
-procedure TfoDBTableField.SetValue(aValue: T);
+function TfoDBGenericTableField.AsString: String;
+begin
+  { Does nothing at this stage, only implemented because I don't seem to be able
+    to inherit an abstract function into another abstract function }
+  Result := '';
+end;
+
+procedure TfoDBGenericTableField.SetValue(aValue: T);
 begin
   { If the field value is set to null, then assign the new value to the internal
     variable, and set the IsNull field to False. This will cause the IsChanged
@@ -1747,7 +1700,7 @@ begin
     no observers should be notified about a change }
 end;
 
-procedure TfoDBTableField.ClearValue;
+procedure TfoDBGenericTableField.ClearValue;
 begin
   { Does nothing at this stage, only implemented because I don't seem to be able
     to inherit an abstract procedure into another abstract procefure }
@@ -1831,7 +1784,7 @@ begin
   end;
 end;
 
-procedure TfoDBTableObject.AddTableField(aTableField: TfoDBAbstractTableField);
+procedure TfoDBTableObject.AddTableField(aTableField: TfoDBTableField);
 const
   lProcedureName = 'AddTableField';
 begin
@@ -1847,11 +1800,6 @@ begin
 
   { Add the field to the internal field list }
   fFieldList.Add(aTableField);
-end;
-
-procedure TfoDBTableObject.AddForeignKeyReferencedTableObject(aTableObject: TfoDBTableObject);
-begin
-
 end;
 
 constructor TfoDBTableObject.Create(aConnection: TSQLConnector; aMutex: TCriticalSection);
@@ -1870,15 +1818,12 @@ begin
   { Set the initial destroying state }
   fIsDestroying := False;
 
+  fOpenedConnection := False;
+
   { Create the local fieldlist, that will hold all field references. Fields will
     also be available by their name and specific type in the autogenerated
     decending classes }
   fFieldList := TfoDBTableFieldList.Create;
-
-  { Create the list of foreign key objects that are referenced from this object,
-    decending types should add their foreign references to this list with the
-    AddForeignKeyReferencedTableObject procedure. }
-  fForeignReferencedTableObjects := TfoDBTableObjectList.Create;
 end;
 
 destructor TfoDBTableObject.Destroy;
@@ -1889,6 +1834,9 @@ begin
 
   if Assigned(fTableInformation) then
     fTableInformation.Free;
+
+  if Assigned(fFieldList) then
+    fFieldList.Free;
 
   { Call the inherited destructor }
   inherited Destroy;
@@ -1901,44 +1849,6 @@ begin
   { TODO -oAPL -cDBTypes 3: Perhaps control the state of the table status from
     here? }
 end;
-
-function TfoDBTableObject.Insert: Boolean;
-const
-  lProcedureName = 'Insert';
-begin
-  Result := False;
-
-  try
-    try
-      if OpenConnection then
-      begin
-        { TODO -oAPL -cDBTypes 1: Implement this feature, inserting at this
-          abstact level! }
-        { Insert objects that are foreign key referenced from this object }
-
-
-        { Insert this object }
-        { Insert lists of objects that are referencing this object with a
-          foreign key in their own table. }
-      end;
-
-      except on e:Exception do
-      begin
-        { Something went wrong, while opening connection or after, while
-          inserting. }
-      end
-    end;
-
-    finally
-    begin
-      { Attempt to close the connection, the procedure will check if this object
-        is the initiator of the connection, and only close it if that is the
-        case. }
-      CloseConnection;
-    end;
-  end;
-end;
-
 
 { TfoDBTableStatus }
 
@@ -1958,6 +1868,10 @@ begin
   fLoadedTime := 0;
   fChangedTime := 0;
   fDeletedTime := 0;
+
+  fIsInserting := False;
+  fIsDeleting := False;
+  fIsUpdating := False;
 end;
 
 destructor TfoDBTableStatus.Destroy;
