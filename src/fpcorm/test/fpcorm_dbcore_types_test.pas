@@ -9,7 +9,7 @@ uses
   sqldb,
   syncobjs,
   FGL,
-  fpcorm_dbcore_objects;
+  fpcorm_dbcore_types;
 
 
 type
@@ -170,7 +170,7 @@ begin
     end
     else if fSchoolClass_by_fk_Class_ID.ObjectStatus.IsChanged then
     begin
-      if
+      // if
 
     end;
   end;

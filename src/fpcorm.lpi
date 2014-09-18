@@ -21,7 +21,7 @@
       <AutoIncrementBuild Value="True"/>
       <MinorVersionNr Value="1"/>
       <RevisionNr Value="1"/>
-      <BuildNr Value="49"/>
+      <BuildNr Value="59"/>
       <StringTable ProductVersion=""/>
     </VersionInfo>
     <BuildModes Count="1">
@@ -37,16 +37,16 @@
         <FormatVersion Value="1"/>
       </local>
     </RunParams>
-    <Units Count="9">
+    <Units Count="11">
       <Unit0>
         <Filename Value="fpcorm.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="fpcorm"/>
       </Unit0>
       <Unit1>
-        <Filename Value="fpcorm/dbcore/fpcorm_dbcore_objects.pas"/>
+        <Filename Value="fpcorm/dbcore/fpcorm_dbcore_types.pas"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="fpcorm_dbcore_objects"/>
+        <UnitName Value="fpcorm_dbcore_types"/>
       </Unit1>
       <Unit2>
         <Filename Value="fpcorm/dbcore/fpcorm_dbcore_utils.pas"/>
@@ -83,6 +83,16 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="fpcorm_dbcore_types_test"/>
       </Unit8>
+      <Unit9>
+        <Filename Value="fpcorm/codebuilder/fpcorm_codebuilder_types.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="fpcorm_codebuilder_types"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="fpcorm/test/fpcorm_codebuilder_types_test.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="fpcorm_codebuilder_types_test"/>
+      </Unit10>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
@@ -93,7 +103,7 @@
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
       <Libraries Value="console/usr/local/lib;console/usr/lib"/>
-      <OtherUnitFiles Value="console/common;console/codebuilder;console/ui;console/test;dbobjects;fpcorm/common;fpcorm/dbcore;test;fpcorm/test"/>
+      <OtherUnitFiles Value="console/common;console/codebuilder;console/ui;console/test;dbobjects;fpcorm/common;fpcorm/dbcore;test;fpcorm/test;fpcorm/codebuilder"/>
       <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
     <CodeGeneration>

@@ -14,8 +14,10 @@ uses
   fpcorm_dbcore_constants,
   fpcorm_dbcore_interfaces,
   fpcorm_dbcore_utils,
-  fpcorm_dbcore_objects,
-  FGL, fpcorm_dbcore_types_test;
+  fpcorm_dbcore_types,
+  FGL, fpcorm_dbcore_types_test,
+  fpcorm_codebuilder_types,
+  fpcorm_codebuilder_types_test;
 
 type
 
@@ -99,6 +101,7 @@ var
   afunclist: TTestFuncList;
   TestObjFuncList: TTestObjFuncList;
   TestObjFunc: TTestObjFunc;
+  cbTest: TCodeBuiderTestClass;
 begin
   // quick check parameters
   ErrorMsg := CheckOptions('h','help');
@@ -119,22 +122,27 @@ begin
 
   { add your program here }
 
+  cbTest := TCodeBuiderTestClass.Create;
+  WriteLn(cbTest.Test);
+  cbTest.Free;
+
+
   // create generic pointer list
   //aTestList := TTestObjList.Create;
   //aPointerList := TPointerList.Create;
   //afunclist := TTestFuncList.Create;
-  TestObjFuncList := TTestObjFuncList.Create;
-
-  try
-    TestObjFuncList.Add(@_GetaTestObjSource);
-
-    aTestObjSource := TTestObj.Create;
-    aTestObjSource.TestField := 'testing';
-
-    for TestObjFunc in TestObjFuncList do
-    begin
-      WriteLn(TestObjFunc().TestField);
-    end;
+  //TestObjFuncList := TTestObjFuncList.Create;
+  //
+  //try
+  //  TestObjFuncList.Add(@_GetaTestObjSource);
+  //
+  //  aTestObjSource := TTestObj.Create;
+  //  aTestObjSource.TestField := 'testing';
+  //
+  //  for TestObjFunc in TestObjFuncList do
+  //  begin
+  //    WriteLn(TestObjFunc().TestField);
+  //  end;
 
     // add the test object (source) to the list
     // aTestList.Add(@@aTestObjSource);
@@ -158,12 +166,12 @@ begin
 
 
 
-    finally
-    begin
-      TestObjFuncList.Free;
-    end;
-  end;
-
+  //  finally
+  //  begin
+  //    TestObjFuncList.Free;
+  //  end;
+  //end;
+  //
 
   // Byte	      0 .. 255	                                    1
   WriteLn(Format('Low(Byte) = %u', [Low(Byte)]));

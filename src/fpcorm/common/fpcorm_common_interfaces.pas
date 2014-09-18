@@ -41,6 +41,17 @@ type
     procedure DetachObserver(aObserver: IfoObserver);
   end;
 
+  IloLogger = interface(IInterface)
+    ['{354AB046-EA70-448C-9582-18F7C2E462E7}']
+    procedure Fatal(aMsg: String);
+    procedure Error(aMsg: String);
+    procedure Warning(aMsg: String);
+    procedure Info(aMsg: String);
+    procedure Debug(aMsg: String);
+    procedure Trace(aMsg: String);
+  end;
+
+
 implementation
 
 end.
